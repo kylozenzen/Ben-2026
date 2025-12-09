@@ -11,18 +11,16 @@
 
     <!-- Open Graph / Facebook / LinkedIn -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://bencampbell.com/"> <!-- REPLACE with your actual URL -->
+    <meta property="og:url" content="https://bencampbell.com/"> 
     <meta property="og:title" content="Ben Campbell | Creative Portfolio">
     <meta property="og:description" content="Strategies that stop the scroll. 6M+ followers grown across SaaS, EdTech, & Zoos. Creator of Plot Twisted & Signal.">
-    <!-- UPDATED BANNER LINK -->
     <meta property="og:image" content="https://raw.githubusercontent.com/kylozenzen/ben-portfolio/main/Portfolio%20Share%20Banner.png">
 
     <!-- Twitter / X -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://bencampbell.com/"> <!-- REPLACE with your actual URL -->
+    <meta name="twitter:url" content="https://bencampbell.com/"> 
     <meta name="twitter:title" content="Ben Campbell | Creative Portfolio">
     <meta name="twitter:description" content="Strategies that stop the scroll. 6M+ followers grown. Creator of Plot Twisted.">
-    <!-- UPDATED BANNER LINK -->
     <meta name="twitter:image" content="https://raw.githubusercontent.com/kylozenzen/ben-portfolio/main/Portfolio%20Share%20Banner.png">
     
     <script src="https://cdn.tailwindcss.com"></script>
@@ -48,7 +46,7 @@
             filter: invert(1) hue-rotate(180deg);
         }
         body.chaos-active img {
-            filter: invert(1) hue-rotate(180deg); /* Keep images looking normal-ish */
+            filter: invert(1) hue-rotate(180deg); 
         }
 
         /* The classic neo-brutalist hard shadow */
@@ -181,16 +179,34 @@
         <div class="absolute inset-0 z-0 bg-grid"></div>
 
         <!-- Navigation -->
-        <nav class="relative z-20 flex flex-wrap justify-between items-center w-full mb-8 md:mb-16 gap-4">
+        <nav class="relative z-20 flex flex-wrap justify-between items-center w-full mb-8 md:mb-16">
             <div class="text-2xl font-black tracking-tighter uppercase border-2 border-black bg-white px-2 py-1">BEN CAMPBELL.</div>
+            
+            <!-- Desktop Menu -->
             <div class="hidden md:flex gap-6 font-bold uppercase">
                 <a href="#" class="hover:bg-yellow-300 px-2 border-2 border-transparent hover:border-black transition-all">Home</a>
                 <a href="#social" class="hover:bg-fuchsia-400 px-2 border-2 border-transparent hover:border-black transition-all">Social</a>
                 <a href="#writing" class="hover:bg-cyan-300 px-2 border-2 border-transparent hover:border-black transition-all">Writing</a>
                 <a href="#video" class="hover:bg-lime-300 px-2 border-2 border-transparent hover:border-black transition-all">Video</a>
             </div>
+
+            <!-- Mobile Menu Button -->
+            <button onclick="toggleMobileMenu()" class="md:hidden font-black uppercase border-2 border-black bg-white px-3 py-2 hard-shadow hover:bg-black hover:text-white transition-colors">
+                MENU ☰
+            </button>
+
+            <!-- Contact Button (Desktop) -->
             <a href="#contact" class="hidden md:block px-6 py-2 font-bold text-white bg-black border-2 border-black hover:bg-fuchsia-500 transition-colors">CONTACT</a>
         </nav>
+
+        <!-- Mobile Menu Dropdown (Hidden by default) -->
+        <div id="mobile-menu" class="hidden flex-col gap-2 mb-8 md:hidden border-b-4 border-black pb-4">
+            <a href="#" onclick="toggleMobileMenu()" class="block bg-white border-2 border-black p-3 font-bold uppercase hover:bg-yellow-300 hard-shadow">Home</a>
+            <a href="#social" onclick="toggleMobileMenu()" class="block bg-white border-2 border-black p-3 font-bold uppercase hover:bg-fuchsia-400 hard-shadow">Social</a>
+            <a href="#writing" onclick="toggleMobileMenu()" class="block bg-white border-2 border-black p-3 font-bold uppercase hover:bg-cyan-300 hard-shadow">Writing</a>
+            <a href="#video" onclick="toggleMobileMenu()" class="block bg-white border-2 border-black p-3 font-bold uppercase hover:bg-lime-300 hard-shadow">Video</a>
+            <a href="#contact" onclick="toggleMobileMenu()" class="block bg-black text-white border-2 border-black p-3 font-bold uppercase hard-shadow">Contact</a>
+        </div>
 
         <div class="relative z-10 flex flex-col justify-center flex-grow max-w-6xl mx-auto w-full">
             <div class="flex flex-col md:flex-row items-center md:items-end justify-center md:justify-center gap-8 md:gap-12">
@@ -218,7 +234,6 @@
                         I’m also a <span class="text-fuchsia-600 font-black">#GirlDad</span> to a very opinionated 3-year-old (see the juice box counter below) and married to a zookeeper who works with gorillas—so if my communication skills seem unusually patient, it’s because I’m never fully sure whether she’s listening or operantly conditioning me.
                     </p>
                     <div class="text-sm md:text-base font-bold text-gray-500 border-t-2 border-dashed border-gray-300 pt-4 flex flex-col md:flex-row items-center justify-center gap-2">
-                        <!-- Secret Vault Button -->
                         <button onclick="unlockVault()" class="uppercase text-white bg-black px-2 py-1 text-xs tracking-wider hover:bg-fuchsia-500 transition-colors cursor-pointer border-2 border-black">
                             Builder Mode 🔒
                         </button>
@@ -295,10 +310,11 @@
     <!-- SOCIAL / CONTENT SECTION -->
     <section id="social" class="bg-yellow-300 border-b-4 border-black p-4 py-20 md:p-12 scroll-mt-20">
         <div class="max-w-7xl mx-auto">
-            <h2 id="social-header" class="text-5xl md:text-7xl font-black uppercase mb-4 text-center" data-aos="zoom-in">
+            <!-- UPDATED HEADER FORMATTING -->
+            <h2 id="social-header" class="text-5xl md:text-6xl font-black uppercase mb-8 border-l-8 border-black pl-6" data-aos="zoom-in">
                 Social That Slaps
             </h2>
-            <p class="text-center font-bold text-xl mb-12 bg-white border-2 border-black inline-block px-4 py-2 hard-shadow mx-auto relative left-1/2 -translate-x-1/2">
+            <p class="mb-8 text-xl max-w-2xl">
                 Latest & Greatest from the Feed
             </p>
             
@@ -732,7 +748,7 @@
                     <div class="h-12 w-12 bg-red-500 border-2 border-black flex items-center justify-center text-2xl mb-4">🍿</div>
                     <h3 class="text-2xl font-black uppercase mb-2">Plot Twisted: Cinema Edition</h3>
                     <p class="font-medium mb-6">A movie trivia platform where the plot is the puzzle. Test your film knowledge against twisted descriptions.</p>
-                    <a href="#" class="inline-block w-full text-center bg-black text-white font-bold uppercase py-3 border-2 border-transparent hover:bg-red-500 hover:text-black hover:border-black transition-colors">
+                    <a href="https://INSERT_YOUR_PLOT_TWISTED_NETLIFY_LINK_HERE.netlify.app" target="_blank" class="inline-block w-full text-center bg-black text-white font-bold uppercase py-3 border-2 border-transparent hover:bg-red-500 hover:text-black hover:border-black transition-colors">
                         Play Game
                     </a>
                 </div>
@@ -742,7 +758,7 @@
                     <div class="h-12 w-12 bg-fuchsia-500 border-2 border-black flex items-center justify-center text-2xl mb-4">🔥</div>
                     <h3 class="text-2xl font-black uppercase mb-2">High Stakes Truth</h3>
                     <p class="font-medium mb-6">A digital party game that forces honesty or consequences. Not for the faint of heart.</p>
-                    <a href="#" class="inline-block w-full text-center bg-black text-white font-bold uppercase py-3 border-2 border-transparent hover:bg-fuchsia-500 hover:text-black hover:border-black transition-colors">
+                    <a href="https://INSERT_YOUR_HIGH_STAKES_NETLIFY_LINK_HERE.netlify.app" target="_blank" class="inline-block w-full text-center bg-black text-white font-bold uppercase py-3 border-2 border-transparent hover:bg-fuchsia-500 hover:text-black hover:border-black transition-colors">
                         Start Game
                     </a>
                 </div>
@@ -752,7 +768,7 @@
                     <div class="h-12 w-12 bg-cyan-400 border-2 border-black flex items-center justify-center text-2xl mb-4">📡</div>
                     <h3 class="text-2xl font-black uppercase mb-2">Signal</h3>
                     <p class="font-medium mb-6">A Gmail extension personal CRM. Track relationships, set follow-ups, and never drop the ball again.</p>
-                    <a href="#" class="inline-block w-full text-center bg-black text-white font-bold uppercase py-3 border-2 border-transparent hover:bg-cyan-400 hover:text-black hover:border-black transition-colors">
+                    <a href="https://INSERT_YOUR_SIGNAL_NETLIFY_LINK_HERE.netlify.app" target="_blank" class="inline-block w-full text-center bg-black text-white font-bold uppercase py-3 border-2 border-transparent hover:bg-cyan-400 hover:text-black hover:border-black transition-colors">
                         View App
                     </a>
                 </div>
@@ -799,7 +815,7 @@
     </footer>
 
     <!-- HIDDEN NOTEPAD & JUICE BOX -->
-    <div id="juice-box-counter" class="fixed bottom-4 left-4 z-50 bg-white border-2 border-black p-3 font-bold hard-shadow flex items-center gap-3 easter-egg-box">
+    <div id="juice-box-counter" class="fixed bottom-2 left-2 z-50 bg-white border-2 border-black p-2 font-bold hard-shadow flex items-center gap-2 easter-egg-box scale-75 origin-bottom-left md:scale-100 md:bottom-4 md:left-4 md:p-3 md:gap-3">
         <span>🧃 Juice Boxes: <span id="juice-count" class="text-fuchsia-500 text-xl">0</span></span>
         <button onclick="addJuice()" class="bg-black text-white px-2 py-1 text-xs uppercase hover:bg-lime-400 hover:text-black transition-colors border border-black">
             +1 Sip
@@ -846,6 +862,18 @@
 
         function toggleChaos() {
             document.body.classList.toggle('chaos-active');
+        }
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                menu.classList.add('flex');
+            } else {
+                menu.classList.add('hidden');
+                menu.classList.remove('flex');
+            }
         }
 
         // SOCIAL TOGGLE
@@ -982,3 +1010,5 @@
 
 </body>
 </html>
+
+
