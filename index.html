@@ -178,34 +178,21 @@
     <main class="relative z-10 w-full min-h-[90vh] p-4 flex flex-col border-b-4 border-black md:p-8" data-aos="fade-in">
         <div class="absolute inset-0 z-0 bg-grid"></div>
 
-        <!-- Navigation -->
-        <nav class="relative z-20 flex flex-wrap justify-between items-center w-full mb-8 md:mb-16">
+        <!-- Desktop Navigation (Hidden on Mobile) -->
+        <nav class="relative z-20 hidden md:flex flex-wrap justify-between items-center w-full mb-16">
             <div class="text-2xl font-black tracking-tighter uppercase border-2 border-black bg-white px-2 py-1">BEN CAMPBELL.</div>
-            
-            <!-- Desktop Menu -->
-            <div class="hidden md:flex gap-6 font-bold uppercase">
-                <a href="#" class="hover:bg-yellow-300 px-2 border-2 border-transparent hover:border-black transition-all">Home</a>
-                <a href="#social" class="hover:bg-fuchsia-400 px-2 border-2 border-transparent hover:border-black transition-all">Social</a>
-                <a href="#writing" class="hover:bg-cyan-300 px-2 border-2 border-transparent hover:border-black transition-all">Writing</a>
-                <a href="#video" class="hover:bg-lime-300 px-2 border-2 border-transparent hover:border-black transition-all">Video</a>
+            <div class="flex gap-6 font-bold uppercase">
+                <button onclick="scrollToSection('social')" class="hover:bg-yellow-300 px-2 border-2 border-transparent hover:border-black transition-all">Home</button>
+                <button onclick="scrollToSection('social')" class="hover:bg-fuchsia-400 px-2 border-2 border-transparent hover:border-black transition-all">Social</button>
+                <button onclick="scrollToSection('writing')" class="hover:bg-cyan-300 px-2 border-2 border-transparent hover:border-black transition-all">Writing</button>
+                <button onclick="scrollToSection('video')" class="hover:bg-lime-300 px-2 border-2 border-transparent hover:border-black transition-all">Video</button>
             </div>
-
-            <!-- Mobile Menu Button -->
-            <button onclick="toggleMobileMenu()" class="md:hidden font-black uppercase border-2 border-black bg-white px-3 py-2 hard-shadow hover:bg-black hover:text-white transition-colors">
-                MENU ☰
-            </button>
-
-            <!-- Contact Button (Desktop) -->
-            <a href="#contact" class="hidden md:block px-6 py-2 font-bold text-white bg-black border-2 border-black hover:bg-fuchsia-500 transition-colors">CONTACT</a>
+            <a href="#contact" class="px-6 py-2 font-bold text-white bg-black border-2 border-black hover:bg-fuchsia-500 transition-colors">CONTACT</a>
         </nav>
 
-        <!-- Mobile Menu Dropdown (Hidden by default) -->
-        <div id="mobile-menu" class="hidden flex-col gap-2 mb-8 md:hidden border-b-4 border-black pb-4">
-            <a href="#" onclick="toggleMobileMenu()" class="block bg-white border-2 border-black p-3 font-bold uppercase hover:bg-yellow-300 hard-shadow">Home</a>
-            <a href="#social" onclick="toggleMobileMenu()" class="block bg-white border-2 border-black p-3 font-bold uppercase hover:bg-fuchsia-400 hard-shadow">Social</a>
-            <a href="#writing" onclick="toggleMobileMenu()" class="block bg-white border-2 border-black p-3 font-bold uppercase hover:bg-cyan-300 hard-shadow">Writing</a>
-            <a href="#video" onclick="toggleMobileMenu()" class="block bg-white border-2 border-black p-3 font-bold uppercase hover:bg-lime-300 hard-shadow">Video</a>
-            <a href="#contact" onclick="toggleMobileMenu()" class="block bg-black text-white border-2 border-black p-3 font-bold uppercase hard-shadow">Contact</a>
+        <!-- Mobile Title (Visible only on Mobile) -->
+        <div class="md:hidden w-full flex justify-between items-center mb-8 relative z-20">
+             <div class="text-xl font-black tracking-tighter uppercase border-2 border-black bg-white px-2 py-1">BEN CAMPBELL.</div>
         </div>
 
         <div class="relative z-10 flex flex-col justify-center flex-grow max-w-6xl mx-auto w-full">
@@ -225,8 +212,16 @@
                 </div>
             </div>
 
-            <div class="w-full flex justify-center mt-12">
-                <div class="max-w-4xl bg-white border-2 border-black p-8 hard-shadow-cyan text-center" data-aos="fade-up" data-aos-delay="200">
+            <!-- MOBILE NAV TABS (Direct JS Scroll - No Anchors) -->
+            <div class="flex flex-wrap justify-center gap-2 mt-8 md:hidden relative z-30">
+                <button onclick="scrollToSection('social')" class="bg-white border-2 border-black px-3 py-2 font-bold uppercase text-sm hard-shadow hover:bg-fuchsia-400 active:bg-fuchsia-400 transition-colors">Social</button>
+                <button onclick="scrollToSection('writing')" class="bg-white border-2 border-black px-3 py-2 font-bold uppercase text-sm hard-shadow hover:bg-cyan-300 active:bg-cyan-300 transition-colors">Writing</button>
+                <button onclick="scrollToSection('video')" class="bg-white border-2 border-black px-3 py-2 font-bold uppercase text-sm hard-shadow hover:bg-lime-300 active:bg-lime-300 transition-colors">Video</button>
+                <button onclick="scrollToSection('contact')" class="bg-black text-white border-2 border-black px-3 py-2 font-bold uppercase text-sm hard-shadow active:bg-gray-800 transition-colors">Contact</button>
+            </div>
+
+            <div class="w-full flex justify-center mt-6 md:mt-12">
+                <div class="max-w-4xl bg-white border-2 border-black p-6 md:p-8 hard-shadow-cyan text-center" data-aos="fade-up" data-aos-delay="200">
                     <p class="text-base md:text-xl font-bold mb-6 leading-relaxed">
                         I build content marketing systems and social strategies that actually get people to stop scrolling. Across SaaS, Education, Architecture, and the San Antonio Zoo, my work has grown audiences ranging from emerging brands to multi-million-follower communities—including leading the Zoo to over <span class="bg-yellow-200 px-1 border border-black">6 million followers</span> across channels.
                     </p>
@@ -234,19 +229,32 @@
                         I’m also a <span class="text-fuchsia-600 font-black">#GirlDad</span> to a very opinionated 3-year-old (see the juice box counter below) and married to a zookeeper who works with gorillas—so if my communication skills seem unusually patient, it’s because I’m never fully sure whether she’s listening or operantly conditioning me.
                     </p>
                     <div class="text-sm md:text-base font-bold text-gray-500 border-t-2 border-dashed border-gray-300 pt-4 flex flex-col md:flex-row items-center justify-center gap-2">
-                        <button onclick="unlockVault()" class="uppercase text-white bg-black px-2 py-1 text-xs tracking-wider hover:bg-fuchsia-500 transition-colors cursor-pointer border-2 border-black">
+                        <!-- VAULT ACCESS DISABLED TEMPORARILY -->
+                        <!-- 
+                        <button onclick="unlockVault()" class="uppercase text-white bg-black px-2 py-1 text-xs tracking-wider hover:bg-fuchsia-500 transition-colors cursor-pointer border-2 border-black mb-2 md:mb-0">
                             Builder Mode 🔒
-                        </button>
-                        <span>Also shipping: <button onclick="unlockVault()" class="text-black hover:underline cursor-pointer font-bold">Plot Twisted</button>, <button onclick="unlockVault()" class="text-black hover:underline cursor-pointer font-bold">High Stakes Truth</button>, & <button onclick="unlockVault()" class="text-black hover:underline cursor-pointer font-bold">Signal</button>.</span>
+                        </button> 
+                        -->
+                        
+                        <!-- Static Text Replacement -->
+                        <span>Also shipping: <span class="text-black font-bold">Plot Twisted</span>, <span class="text-black font-bold">High Stakes Truth</span>, & <span class="text-black font-bold">Signal</span>.</span>
                     </div>
                 </div>
             </div>
 
-            <div class="flex flex-wrap justify-center gap-4 mt-8">
-                <a href="#social" class="px-8 py-3 text-lg font-bold uppercase bg-fuchsia-500 border-2 border-black hard-shadow btn-push text-white">
+            <!-- Desktop Resume/Work Buttons -->
+            <div class="hidden md:flex flex-wrap justify-center gap-4 mt-8">
+                <button onclick="scrollToSection('social')" class="px-8 py-3 text-lg font-bold uppercase bg-fuchsia-500 border-2 border-black hard-shadow btn-push text-white">
                     Explore Work
-                </a>
+                </button>
                 <a href="https://drive.google.com/file/d/1qgJ8pdTkbT4w9wTi2SOS8yNJsO07BZDb/view?usp=sharing" target="_blank" class="px-8 py-3 text-lg font-bold uppercase bg-white border-2 border-black hard-shadow btn-push flex items-center gap-2">
+                    <span>📄</span> Download Resume
+                </a>
+            </div>
+            
+            <!-- Mobile Resume Button -->
+            <div class="flex md:hidden justify-center mt-6">
+                 <a href="https://drive.google.com/file/d/1qgJ8pdTkbT4w9wTi2SOS8yNJsO07BZDb/view?usp=sharing" target="_blank" class="px-6 py-2 text-sm font-bold uppercase bg-white border-2 border-black hard-shadow btn-push flex items-center gap-2">
                     <span>📄</span> Download Resume
                 </a>
             </div>
@@ -299,9 +307,11 @@
                     <span class="text-2xl md:text-4xl font-black mb-1">1M+</span>
                     <span class="text-xs md:text-sm font-bold uppercase border-t-2 border-black pt-1 w-full">Zoo IG</span>
                 </div>
-                <div class="bg-white border-2 border-black p-3 md:p-4 hard-shadow flex flex-col justify-center items-center text-center" data-aos="flip-up" data-aos-delay="150">
-                    <span class="text-2xl md:text-4xl font-black mb-1">6+</span>
-                    <span class="text-xs md:text-sm font-bold uppercase border-t-2 border-black pt-1 w-full">Years Exp.</span>
+                
+                <!-- INTERACTIVE JUICE BOX STAT -->
+                <div class="bg-orange-200 border-2 border-black p-3 md:p-4 hard-shadow flex flex-col justify-center items-center text-center cursor-pointer active:scale-95 transition-transform" onclick="addJuice()" data-aos="flip-up" data-aos-delay="150">
+                    <span id="juice-count-display" class="text-2xl md:text-4xl font-black mb-1">0</span>
+                    <span class="text-xs md:text-sm font-bold uppercase border-t-2 border-black pt-1 w-full">Juice Boxes 🧃</span>
                 </div>
             </div>
         </div>
@@ -324,9 +334,7 @@
                     <h3 class="font-black uppercase text-lg mb-4 border-b-2 border-black pb-2">Poop Candle Review</h3>
                     <div class="flex-grow flex items-center justify-center bg-gray-50 min-h-[450px] border border-gray-200 relative mb-4">
                         <span class="absolute text-gray-400 font-bold text-center p-4 text-sm z-0">Loading Embed...</span>
-                        <blockquote class="instagram-media relative z-10 w-full" data-instgrm-permalink="https://www.instagram.com/p/DFvyUTxC4tV/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:none; margin: 0; padding:0; width:100%;">
-                            <a href="https://www.instagram.com/p/DFvyUTxC4tV/" style="text-decoration:none; display: block; height: 100%; width: 100%;"></a>
-                        </blockquote>
+                        <blockquote class="instagram-media relative z-10 w-full" data-instgrm-permalink="https://www.instagram.com/p/DFvyUTxC4tV/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:none; margin: 0; padding:0; width:100%;"></blockquote>
                     </div>
                     <a href="https://www.instagram.com/p/DFvyUTxC4tV/" target="_blank" class="block text-center bg-black text-white font-bold py-3 hover:bg-fuchsia-500 transition-colors uppercase text-sm border-2 border-black btn-push">View on Instagram ↗</a>
                 </div>
@@ -336,9 +344,7 @@
                     <h3 class="font-black uppercase text-lg mb-4 border-b-2 border-black pb-2">Christmas Promo Shoot</h3>
                     <div class="flex-grow flex items-center justify-center bg-gray-50 min-h-[450px] border border-gray-200 relative mb-4">
                         <span class="absolute text-gray-400 font-bold text-center p-4 text-sm z-0">Loading Embed...</span>
-                        <blockquote class="instagram-media relative z-10 w-full" data-instgrm-permalink="https://www.instagram.com/p/DEQBZEAO2N0/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:none; margin: 0; padding:0; width:100%;">
-                             <a href="https://www.instagram.com/p/DEQBZEAO2N0/" style="text-decoration:none; display: block; height: 100%; width: 100%;"></a>
-                        </blockquote>
+                        <blockquote class="instagram-media relative z-10 w-full" data-instgrm-permalink="https://www.instagram.com/p/DEQBZEAO2N0/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:none; margin: 0; padding:0; width:100%;"></blockquote>
                     </div>
                     <a href="https://www.instagram.com/p/DEQBZEAO2N0/" target="_blank" class="block text-center bg-black text-white font-bold py-3 hover:bg-fuchsia-500 transition-colors uppercase text-sm border-2 border-black btn-push">View on Instagram ↗</a>
                 </div>
@@ -348,9 +354,7 @@
                     <h3 class="font-black uppercase text-lg mb-4 border-b-2 border-black pb-2">Turn Down for Watt?!</h3>
                     <div class="flex-grow flex items-center justify-center bg-gray-50 min-h-[450px] border border-gray-200 relative mb-4">
                          <span class="absolute text-gray-400 font-bold text-center p-4 text-sm z-0">Loading Embed...</span>
-                        <blockquote class="instagram-media relative z-10 w-full" data-instgrm-permalink="https://www.instagram.com/p/DD-NqB3POnN/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:none; margin: 0; padding:0; width:100%;">
-                             <a href="https://www.instagram.com/p/DD-NqB3POnN/" style="text-decoration:none; display: block; height: 100%; width: 100%;"></a>
-                        </blockquote>
+                        <blockquote class="instagram-media relative z-10 w-full" data-instgrm-permalink="https://www.instagram.com/p/DD-NqB3POnN/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:none; margin: 0; padding:0; width:100%;"></blockquote>
                     </div>
                     <a href="https://www.instagram.com/p/DD-NqB3POnN/" target="_blank" class="block text-center bg-black text-white font-bold py-3 hover:bg-fuchsia-500 transition-colors uppercase text-sm border-2 border-black btn-push">View on Instagram ↗</a>
                 </div>
@@ -358,9 +362,7 @@
                     <h3 class="font-black uppercase text-lg mb-4 border-b-2 border-black pb-2">Christmas Zone</h3>
                     <div class="flex-grow flex items-center justify-center bg-gray-50 min-h-[450px] border border-gray-200 relative mb-4">
                          <span class="absolute text-gray-400 font-bold text-center p-4 text-sm z-0">Loading Embed...</span>
-                        <blockquote class="instagram-media relative z-10 w-full" data-instgrm-permalink="https://www.instagram.com/p/DDxzTfJpGiI/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:none; margin: 0; padding:0; width:100%;">
-                            <a href="https://www.instagram.com/p/DDxzTfJpGiI/" style="text-decoration:none; display: block; height: 100%; width: 100%;"></a>
-                        </blockquote>
+                        <blockquote class="instagram-media relative z-10 w-full" data-instgrm-permalink="https://www.instagram.com/p/DDxzTfJpGiI/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:none; margin: 0; padding:0; width:100%;"></blockquote>
                     </div>
                     <a href="https://www.instagram.com/p/DDxzTfJpGiI/" target="_blank" class="block text-center bg-black text-white font-bold py-3 hover:bg-fuchsia-500 transition-colors uppercase text-sm border-2 border-black btn-push">View on Instagram ↗</a>
                 </div>
@@ -368,9 +370,7 @@
                     <h3 class="font-black uppercase text-lg mb-4 border-b-2 border-black pb-2">5 Reasons to Visit</h3>
                     <div class="flex-grow flex items-center justify-center bg-gray-50 min-h-[450px] border border-gray-200 relative mb-4">
                          <span class="absolute text-gray-400 font-bold text-center p-4 text-sm z-0">Loading Embed...</span>
-                        <blockquote class="instagram-media relative z-10 w-full" data-instgrm-permalink="https://www.instagram.com/p/DDhPpkvvuU3/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:none; margin: 0; padding:0; width:100%;">
-                            <a href="https://www.instagram.com/p/DDhPpkvvuU3/" style="text-decoration:none; display: block; height: 100%; width: 100%;"></a>
-                        </blockquote>
+                        <blockquote class="instagram-media relative z-10 w-full" data-instgrm-permalink="https://www.instagram.com/p/DDhPpkvvuU3/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:none; margin: 0; padding:0; width:100%;"></blockquote>
                     </div>
                     <a href="https://www.instagram.com/p/DDhPpkvvuU3/" target="_blank" class="block text-center bg-black text-white font-bold py-3 hover:bg-fuchsia-500 transition-colors uppercase text-sm border-2 border-black btn-push">View on Instagram ↗</a>
                 </div>
@@ -378,9 +378,7 @@
                     <h3 class="font-black uppercase text-lg mb-4 border-b-2 border-black pb-2">Zoo Lights Paid Ad</h3>
                     <div class="flex-grow flex items-center justify-center bg-gray-50 min-h-[450px] border border-gray-200 relative mb-4">
                          <span class="absolute text-gray-400 font-bold text-center p-4 text-sm z-0">Loading Embed...</span>
-                        <blockquote class="instagram-media relative z-10 w-full" data-instgrm-permalink="https://www.instagram.com/p/DDfvmdNM1da/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:none; margin: 0; padding:0; width:100%;">
-                            <a href="https://www.instagram.com/p/DDfvmdNM1da/" style="text-decoration:none; display: block; height: 100%; width: 100%;"></a>
-                        </blockquote>
+                        <blockquote class="instagram-media relative z-10 w-full" data-instgrm-permalink="https://www.instagram.com/p/DDfvmdNM1da/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:none; margin: 0; padding:0; width:100%;"></blockquote>
                     </div>
                     <a href="https://www.instagram.com/p/DDfvmdNM1da/" target="_blank" class="block text-center bg-black text-white font-bold py-3 hover:bg-fuchsia-500 transition-colors uppercase text-sm border-2 border-black btn-push">View on Instagram ↗</a>
                 </div>
@@ -388,9 +386,7 @@
                     <h3 class="font-black uppercase text-lg mb-4 border-b-2 border-black pb-2">Gen Z Slang Trend Pt. 2</h3>
                     <div class="flex-grow flex items-center justify-center bg-gray-50 min-h-[450px] border border-gray-200 relative mb-4">
                          <span class="absolute text-gray-400 font-bold text-center p-4 text-sm z-0">Loading Embed...</span>
-                        <blockquote class="instagram-media relative z-10 w-full" data-instgrm-permalink="https://www.instagram.com/p/DDSp53EJCm6/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:none; margin: 0; padding:0; width:100%;">
-                             <a href="https://www.instagram.com/p/DDSp53EJCm6/" style="text-decoration:none; display: block; height: 100%; width: 100%;"></a>
-                        </blockquote>
+                        <blockquote class="instagram-media relative z-10 w-full" data-instgrm-permalink="https://www.instagram.com/p/DDSp53EJCm6/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:none; margin: 0; padding:0; width:100%;"></blockquote>
                     </div>
                     <a href="https://www.instagram.com/p/DDSp53EJCm6/" target="_blank" class="block text-center bg-black text-white font-bold py-3 hover:bg-fuchsia-500 transition-colors uppercase text-sm border-2 border-black btn-push">View on Instagram ↗</a>
                 </div>
@@ -398,9 +394,7 @@
                     <h3 class="font-black uppercase text-lg mb-4 border-b-2 border-black pb-2">Community UGC</h3>
                     <div class="flex-grow flex items-center justify-center bg-gray-50 min-h-[450px] border border-gray-200 relative mb-4">
                          <span class="absolute text-gray-400 font-bold text-center p-4 text-sm z-0">Loading Embed...</span>
-                        <blockquote class="instagram-media relative z-10 w-full" data-instgrm-permalink="https://www.instagram.com/p/DCkhLKmNvK8/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:none; margin: 0; padding:0; width:100%;">
-                             <a href="https://www.instagram.com/p/DCkhLKmNvK8/" style="text-decoration:none; display: block; height: 100%; width: 100%;"></a>
-                        </blockquote>
+                        <blockquote class="instagram-media relative z-10 w-full" data-instgrm-permalink="https://www.instagram.com/p/DCkhLKmNvK8/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:none; margin: 0; padding:0; width:100%;"></blockquote>
                     </div>
                     <a href="https://www.instagram.com/p/DCkhLKmNvK8/" target="_blank" class="block text-center bg-black text-white font-bold py-3 hover:bg-fuchsia-500 transition-colors uppercase text-sm border-2 border-black btn-push">View on Instagram ↗</a>
                 </div>
@@ -408,9 +402,7 @@
                     <h3 class="font-black uppercase text-lg mb-4 border-b-2 border-black pb-2">Capybara Naming</h3>
                     <div class="flex-grow flex items-center justify-center bg-gray-50 min-h-[450px] border border-gray-200 relative mb-4">
                          <span class="absolute text-gray-400 font-bold text-center p-4 text-sm z-0">Loading Embed...</span>
-                        <blockquote class="instagram-media relative z-10 w-full" data-instgrm-permalink="https://www.instagram.com/p/DEnTfreMCnq/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:none; margin: 0; padding:0; width:100%;">
-                             <a href="https://www.instagram.com/p/DEnTfreMCnq/" style="text-decoration:none; display: block; height: 100%; width: 100%;"></a>
-                        </blockquote>
+                        <blockquote class="instagram-media relative z-10 w-full" data-instgrm-permalink="https://www.instagram.com/p/DEnTfreMCnq/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:none; margin: 0; padding:0; width:100%;"></blockquote>
                     </div>
                     <a href="https://www.instagram.com/p/DEnTfreMCnq/" target="_blank" class="block text-center bg-black text-white font-bold py-3 hover:bg-fuchsia-500 transition-colors uppercase text-sm border-2 border-black btn-push">View on Instagram ↗</a>
                 </div>
@@ -418,9 +410,7 @@
                     <h3 class="font-black uppercase text-lg mb-4 border-b-2 border-black pb-2">Spring Break Promo</h3>
                     <div class="flex-grow flex items-center justify-center bg-gray-50 min-h-[450px] border border-gray-200 relative mb-4">
                          <span class="absolute text-gray-400 font-bold text-center p-4 text-sm z-0">Loading Embed...</span>
-                        <blockquote class="instagram-media relative z-10 w-full" data-instgrm-permalink="https://www.instagram.com/reel/DGlCWrhpx-x/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:none; margin: 0; padding:0; width:100%;">
-                             <a href="https://www.instagram.com/reel/DGlCWrhpx-x/" style="text-decoration:none; display: block; height: 100%; width: 100%;"></a>
-                        </blockquote>
+                        <blockquote class="instagram-media relative z-10 w-full" data-instgrm-permalink="https://www.instagram.com/reel/DGlCWrhpx-x/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:none; margin: 0; padding:0; width:100%;"></blockquote>
                     </div>
                     <a href="https://www.instagram.com/reel/DGlCWrhpx-x/" target="_blank" class="block text-center bg-black text-white font-bold py-3 hover:bg-fuchsia-500 transition-colors uppercase text-sm border-2 border-black btn-push">View on Instagram ↗</a>
                 </div>
@@ -428,9 +418,7 @@
                     <h3 class="font-black uppercase text-lg mb-4 border-b-2 border-black pb-2">Valentine's Day</h3>
                     <div class="flex-grow flex items-center justify-center bg-gray-50 min-h-[450px] border border-gray-200 relative mb-4">
                         <span class="absolute text-gray-400 font-bold text-center p-4 text-sm z-0">Loading Embed...</span>
-                        <blockquote class="instagram-media relative z-10 w-full" data-instgrm-permalink="https://www.instagram.com/reel/DGEuaQcx1tp/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:none; margin: 0; padding:0; width:100%;">
-                            <a href="https://www.instagram.com/reel/DGEuaQcx1tp/" style="text-decoration:none; display: block; height: 100%; width: 100%;"></a>
-                        </blockquote>
+                        <blockquote class="instagram-media relative z-10 w-full" data-instgrm-permalink="https://www.instagram.com/reel/DGEuaQcx1tp/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:none; margin: 0; padding:0; width:100%;"></blockquote>
                     </div>
                     <a href="https://www.instagram.com/reel/DGEuaQcx1tp/" target="_blank" class="block text-center bg-black text-white font-bold py-3 hover:bg-fuchsia-500 transition-colors uppercase text-sm border-2 border-black btn-push">View on Instagram ↗</a>
                 </div>
@@ -748,7 +736,7 @@
                     <div class="h-12 w-12 bg-red-500 border-2 border-black flex items-center justify-center text-2xl mb-4">🍿</div>
                     <h3 class="text-2xl font-black uppercase mb-2">Plot Twisted: Cinema Edition</h3>
                     <p class="font-medium mb-6">A movie trivia platform where the plot is the puzzle. Test your film knowledge against twisted descriptions.</p>
-                    <a href="https://INSERT_YOUR_PLOT_TWISTED_NETLIFY_LINK_HERE.netlify.app" target="_blank" class="inline-block w-full text-center bg-black text-white font-bold uppercase py-3 border-2 border-transparent hover:bg-red-500 hover:text-black hover:border-black transition-colors">
+                    <a href="https://plottwisted.netlify.app/" target="_blank" class="inline-block w-full text-center bg-black text-white font-bold uppercase py-3 border-2 border-transparent hover:bg-red-500 hover:text-black hover:border-black transition-colors">
                         Play Game
                     </a>
                 </div>
@@ -758,7 +746,7 @@
                     <div class="h-12 w-12 bg-fuchsia-500 border-2 border-black flex items-center justify-center text-2xl mb-4">🔥</div>
                     <h3 class="text-2xl font-black uppercase mb-2">High Stakes Truth</h3>
                     <p class="font-medium mb-6">A digital party game that forces honesty or consequences. Not for the faint of heart.</p>
-                    <a href="https://INSERT_YOUR_HIGH_STAKES_NETLIFY_LINK_HERE.netlify.app" target="_blank" class="inline-block w-full text-center bg-black text-white font-bold uppercase py-3 border-2 border-transparent hover:bg-fuchsia-500 hover:text-black hover:border-black transition-colors">
+                    <a href="https://highstakestruth.netlify.app/" target="_blank" class="inline-block w-full text-center bg-black text-white font-bold uppercase py-3 border-2 border-transparent hover:bg-fuchsia-500 hover:text-black hover:border-black transition-colors">
                         Start Game
                     </a>
                 </div>
@@ -768,7 +756,7 @@
                     <div class="h-12 w-12 bg-cyan-400 border-2 border-black flex items-center justify-center text-2xl mb-4">📡</div>
                     <h3 class="text-2xl font-black uppercase mb-2">Signal</h3>
                     <p class="font-medium mb-6">A Gmail extension personal CRM. Track relationships, set follow-ups, and never drop the ball again.</p>
-                    <a href="https://INSERT_YOUR_SIGNAL_NETLIFY_LINK_HERE.netlify.app" target="_blank" class="inline-block w-full text-center bg-black text-white font-bold uppercase py-3 border-2 border-transparent hover:bg-cyan-400 hover:text-black hover:border-black transition-colors">
+                    <a href="https://66993a4014f04c00085a6b0c--linkup-crm.netlify.app/" target="_blank" class="inline-block w-full text-center bg-black text-white font-bold uppercase py-3 border-2 border-transparent hover:bg-cyan-400 hover:text-black hover:border-black transition-colors">
                         View App
                     </a>
                 </div>
@@ -814,14 +802,14 @@
         </div>
     </footer>
 
-    <!-- HIDDEN NOTEPAD & JUICE BOX -->
-    <div id="juice-box-counter" class="fixed bottom-2 left-2 z-50 bg-white border-2 border-black p-2 font-bold hard-shadow flex items-center gap-2 easter-egg-box scale-75 origin-bottom-left md:scale-100 md:bottom-4 md:left-4 md:p-3 md:gap-3">
-        <span>🧃 Juice Boxes: <span id="juice-count" class="text-fuchsia-500 text-xl">0</span></span>
-        <button onclick="addJuice()" class="bg-black text-white px-2 py-1 text-xs uppercase hover:bg-lime-400 hover:text-black transition-colors border border-black">
-            +1 Sip
+    <!-- BACK TO TOP BUTTON -->
+    <div id="back-to-top" class="fixed bottom-4 right-4 z-50 transition-opacity opacity-0 pointer-events-none">
+        <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="bg-black text-white w-10 h-10 md:w-12 md:h-12 border-2 border-white hard-shadow hover:bg-fuchsia-500 transition-colors flex items-center justify-center font-bold text-xl">
+            ⬆
         </button>
     </div>
     
+    <!-- HIDDEN NOTEPAD -->
     <div id="notepad" class="fixed top-24 left-1/2 -translate-x-1/2 w-[90%] md:w-[500px] bg-yellow-100 border-4 border-black p-4 z-[100] hard-shadow hidden">
         <div class="flex justify-between items-center mb-4 border-b-2 border-black pb-2">
             <h3 class="font-black uppercase text-xl">📝 Secret Ideas</h3>
@@ -846,14 +834,32 @@
     <script>
         AOS.init({ once: true, duration: 800, offset: 50, easing: 'ease-out-cubic' });
 
-        // Juice Box Logic
+        // Scroll to Section (Custom Logic for reliability)
+        function scrollToSection(id) {
+            const section = document.getElementById(id);
+            if (section) {
+                // Force scroll even if section is mid-animation
+                const yOffset = -20; 
+                const y = section.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                window.scrollTo({top: y, behavior: 'smooth'});
+            }
+        }
+
+        // Back to Top Logic
+        window.addEventListener('scroll', () => {
+            const btn = document.getElementById('back-to-top');
+            if (window.scrollY > 500) {
+                btn.classList.remove('opacity-0', 'pointer-events-none');
+            } else {
+                btn.classList.add('opacity-0', 'pointer-events-none');
+            }
+        });
+
+        // Juice Box Logic (Moved to Stat Card)
         let count = 0;
         function addJuice() {
             count++;
-            document.getElementById('juice-count').innerText = count;
-            const btn = document.getElementById('juice-box-counter');
-            btn.style.transform = "scale(1.1)";
-            setTimeout(() => { btn.style.transform = "scale(1)"; }, 100);
+            document.getElementById('juice-count-display').innerText = count;
         }
 
         function toggleNotepad() {
@@ -862,18 +868,6 @@
 
         function toggleChaos() {
             document.body.classList.toggle('chaos-active');
-        }
-
-        // Mobile Menu Toggle
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobile-menu');
-            if (menu.classList.contains('hidden')) {
-                menu.classList.remove('hidden');
-                menu.classList.add('flex');
-            } else {
-                menu.classList.add('hidden');
-                menu.classList.remove('flex');
-            }
         }
 
         // SOCIAL TOGGLE
@@ -1010,5 +1004,3 @@
 
 </body>
 </html>
-
-
