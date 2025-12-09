@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ben Campbell | Creative Portfolio</title>
+    
+    <!-- SEO & LINK PREVIEWS -->
+    <meta name="description" content="Creative strategist building viral content & digital chaos. 6M+ followers grown. #GirlDad & Builder.">
+    <meta name="author" content="Ben Campbell">
+
+    <!-- Open Graph / Facebook / LinkedIn -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bencampbell.com/"> <!-- REPLACE with your actual URL -->
+    <meta property="og:title" content="Ben Campbell | Creative Portfolio">
+    <meta property="og:description" content="Strategies that stop the scroll. 6M+ followers grown across SaaS, EdTech, & Zoos. Creator of Plot Twisted & Signal.">
+    <!-- UPDATED BANNER LINK -->
+    <meta property="og:image" content="https://raw.githubusercontent.com/kylozenzen/ben-portfolio/main/Portfolio%20Share%20Banner.png">
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://bencampbell.com/"> <!-- REPLACE with your actual URL -->
+    <meta name="twitter:title" content="Ben Campbell | Creative Portfolio">
+    <meta name="twitter:description" content="Strategies that stop the scroll. 6M+ followers grown. Creator of Plot Twisted.">
+    <!-- UPDATED BANNER LINK -->
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/kylozenzen/ben-portfolio/main/Portfolio%20Share%20Banner.png">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700;900&display=swap" rel="stylesheet">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        /* Custom styles to push the Neo-Brutalist feel */
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: #fff9f9; 
+            color: #000;
+            overflow-x: hidden; 
+            transition: filter 0.3s ease;
+        }
+
+        /* CHAOS MODE */
+        body.chaos-active {
+            filter: invert(1) hue-rotate(180deg);
+        }
+        body.chaos-active img {
+            filter: invert(1) hue-rotate(180deg); /* Keep images looking normal-ish */
+        }
+
+        /* The classic neo-brutalist hard shadow */
+        .hard-shadow {
+            box-shadow: 4px 4px 0px #000;
+            transition: all 0.2s ease-out;
+        }
+
+        .hard-shadow:hover {
+            box-shadow: 6px 6px 0px #000;
+            transform: translate(-1px, -1px);
+        }
+        
+        .hard-shadow-fuchsia { box-shadow: 6px 6px 0px #d946ef; }
+        .hard-shadow-lime { box-shadow: 6px 6px 0px #bef264; }
+        .hard-shadow-cyan { box-shadow: 6px 6px 0px #67e8f9; }
+        .hard-shadow-red { box-shadow: 6px 6px 0px #ef4444; }
+
+        .btn-push:hover {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0px #000;
+        }
+        .btn-push:active {
+            transform: translate(4px, 4px);
+            box-shadow: 0px 0px 0px #000;
+        }
+
+        .bg-grid {
+            background-image: linear-gradient(#000 1px, transparent 1px),
+            linear-gradient(90deg, #000 1px, transparent 1px);
+            background-size: 20px 20px;
+            background-color: #fff9f9;
+            opacity: 0.1;
+        }
+
+        .easter-egg-box {
+            border: 3px solid #000;
+            box-shadow: 4px 4px 0 #000;
+        }
+        
+        /* Filter Button Active State */
+        .filter-btn.active, .video-filter-btn.active {
+            background-color: #000;
+            color: #fff;
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0px #d946ef;
+        }
+
+        /* Video Play Button Overlay */
+        .play-overlay {
+            background: rgba(0,0,0,0.4);
+            transition: all 0.3s;
+        }
+        .video-card:hover .play-overlay {
+            background: rgba(0,0,0,0.1);
+        }
+        .play-icon {
+            transition: transform 0.3s;
+        }
+        .video-card:hover .play-icon {
+            transform: scale(1.1);
+        }
+
+        /* HAZARD STRIPES PATTERN */
+        .hazard-stripes {
+            background-color: #000;
+            background-image: repeating-linear-gradient(
+                45deg,
+                #000,
+                #000 10px,
+                #111 10px,
+                #111 20px
+            );
+        }
+
+        /* GLITCH EFFECT - REFINED (Less Frequent) */
+        .glitch-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+        .glitch {
+            position: relative;
+        }
+        .glitch::before,
+        .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #fff9f9; /* Match background */
+        }
+        /* Increased duration to 4s and adjusted keyframes to have long pauses */
+        .glitch::before {
+            left: 2px;
+            text-shadow: -1px 0 #ff00c1;
+            clip: rect(0, 0, 0, 0);
+            animation: glitch-anim-1 4s infinite linear alternate-reverse;
+        }
+        .glitch::after {
+            left: -2px;
+            text-shadow: -1px 0 #00fff9;
+            clip: rect(0, 0, 0, 0);
+            animation: glitch-anim-2 4s infinite linear alternate-reverse;
+        }
+
+        /* Keyframes modified to be static for 90% of the time */
+        @keyframes glitch-anim-1 {
+            0%, 90% { clip: rect(0, 0, 0, 0); }
+            91% { clip: rect(30px, 9999px, 10px, 0); }
+            94% { clip: rect(10px, 9999px, 80px, 0); }
+            97% { clip: rect(50px, 9999px, 90px, 0); }
+            100% { clip: rect(20px, 9999px, 60px, 0); }
+        }
+        @keyframes glitch-anim-2 {
+            0%, 90% { clip: rect(0, 0, 0, 0); }
+            91% { clip: rect(10px, 9999px, 90px, 0); }
+            94% { clip: rect(20px, 9999px, 70px, 0); }
+            97% { clip: rect(80px, 9999px, 10px, 0); }
+            100% { clip: rect(60px, 9999px, 10px, 0); }
+        }
+    </style>
+</head>
+
+<body class="selection:bg-fuchsia-500 selection:text-white">
+
+    <!-- HERO SECTION -->
+    <main class="relative z-10 w-full min-h-[90vh] p-4 flex flex-col border-b-4 border-black md:p-8" data-aos="fade-in">
+        <div class="absolute inset-0 z-0 bg-grid"></div>
+
+        <!-- Navigation -->
+        <nav class="relative z-20 flex flex-wrap justify-between items-center w-full mb-8 md:mb-16 gap-4">
+            <div class="text-2xl font-black tracking-tighter uppercase border-2 border-black bg-white px-2 py-1">BEN CAMPBELL.</div>
+            <div class="hidden md:flex gap-6 font-bold uppercase">
+                <a href="#" class="hover:bg-yellow-300 px-2 border-2 border-transparent hover:border-black transition-all">Home</a>
+                <a href="#social" class="hover:bg-fuchsia-400 px-2 border-2 border-transparent hover:border-black transition-all">Social</a>
+                <a href="#writing" class="hover:bg-cyan-300 px-2 border-2 border-transparent hover:border-black transition-all">Writing</a>
+                <a href="#video" class="hover:bg-lime-300 px-2 border-2 border-transparent hover:border-black transition-all">Video</a>
+            </div>
+            <a href="#contact" class="hidden md:block px-6 py-2 font-bold text-white bg-black border-2 border-black hover:bg-fuchsia-500 transition-colors">CONTACT</a>
+        </nav>
+
+        <div class="relative z-10 flex flex-col justify-center flex-grow max-w-6xl mx-auto w-full">
+            <div class="flex flex-col md:flex-row items-center md:items-end justify-center md:justify-center gap-8 md:gap-12">
+                <!-- Profile Image -->
+                <div class="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-black hard-shadow-lime bg-gray-200 flex-shrink-0" data-aos="fade-right">
+                    <img src="https://raw.githubusercontent.com/kylozenzen/ben-portfolio/main/Ben%20Headshot%202026.jpg" alt="Ben Campbell" class="w-full h-full object-cover">
+                </div>
+                <div class="text-center md:text-right" data-aos="fade-left">
+                    <h1 class="text-6xl font-black uppercase md:text-[7rem] leading-[0.9] tracking-tight mb-2">
+                        HI, I'M <br>
+                        <!-- Glitch Effect Wrapper -->
+                        <div class="glitch-wrapper">
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-500 to-purple-600 glitch" data-text="BEN" style="-webkit-text-stroke: 2px black;">BEN</span>
+                        </div>
+                    </h1>
+                </div>
+            </div>
+
+            <div class="w-full flex justify-center mt-12">
+                <div class="max-w-4xl bg-white border-2 border-black p-8 hard-shadow-cyan text-center" data-aos="fade-up" data-aos-delay="200">
+                    <p class="text-base md:text-xl font-bold mb-6 leading-relaxed">
+                        I build content marketing systems and social strategies that actually get people to stop scrolling. Across SaaS, Education, Architecture, and the San Antonio Zoo, my work has grown audiences ranging from emerging brands to multi-million-follower communities—including leading the Zoo to over <span class="bg-yellow-200 px-1 border border-black">6 million followers</span> across channels.
+                    </p>
+                    <p class="text-base md:text-lg font-medium text-gray-700 mb-6 leading-relaxed">
+                        I’m also a <span class="text-fuchsia-600 font-black">#GirlDad</span> to a very opinionated 3-year-old (see the juice box counter below) and married to a zookeeper who works with gorillas—so if my communication skills seem unusually patient, it’s because I’m never fully sure whether she’s listening or operantly conditioning me.
+                    </p>
+                    <div class="text-sm md:text-base font-bold text-gray-500 border-t-2 border-dashed border-gray-300 pt-4 flex flex-col md:flex-row items-center justify-center gap-2">
+                        <!-- Secret Vault Button -->
+                        <button onclick="unlockVault()" class="uppercase text-white bg-black px-2 py-1 text-xs tracking-wider hover:bg-fuchsia-500 transition-colors cursor-pointer border-2 border-black">
+                            Builder Mode 🔒
+                        </button>
+                        <span>Also shipping: <button onclick="unlockVault()" class="text-black hover:underline cursor-pointer font-bold">Plot Twisted</button>, <button onclick="unlockVault()" class="text-black hover:underline cursor-pointer font-bold">High Stakes Truth</button>, & <button onclick="unlockVault()" class="text-black hover:underline cursor-pointer font-bold">Signal</button>.</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-4 mt-8">
+                <a href="#social" class="px-8 py-3 text-lg font-bold uppercase bg-fuchsia-500 border-2 border-black hard-shadow btn-push text-white">
+                    Explore Work
+                </a>
+                <a href="https://drive.google.com/file/d/1qgJ8pdTkbT4w9wTi2SOS8yNJsO07BZDb/view?usp=sharing" target="_blank" class="px-8 py-3 text-lg font-bold uppercase bg-white border-2 border-black hard-shadow btn-push flex items-center gap-2">
+                    <span>📄</span> Download Resume
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- STATIC BANNER WITH HAZARD PATTERN -->
+    <section class="w-full py-4 hazard-stripes border-b-4 border-black overflow-hidden">
+        <div class="text-center">
+            <span class="text-xl md:text-3xl font-black italic uppercase text-lime-400 tracking-widest bg-black px-2">
+                /// SOCIAL STRATEGY /// VIRAL CONTENT /// BRAND CHAOS ///
+            </span>
+        </div>
+    </section>
+
+    <!-- STATS SECTION -->
+    <section class="p-4 py-12 md:p-12 border-b-4 border-black bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-10" data-aos="fade-up">
+                <h2 class="text-3xl md:text-5xl font-black uppercase inline-block bg-yellow-300 px-4 py-2 border-2 border-black hard-shadow">
+                    Social By The Numbers
+                </h2>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bg-fuchsia-200 border-2 border-black p-3 md:p-4 hard-shadow flex flex-col justify-center items-center text-center" data-aos="flip-up">
+                    <span class="text-2xl md:text-4xl font-black mb-1">6M+</span>
+                    <span class="text-xs md:text-sm font-bold uppercase border-t-2 border-black pt-1 w-full">Followers</span>
+                </div>
+                <div class="bg-lime-200 border-2 border-black p-3 md:p-4 hard-shadow flex flex-col justify-center items-center text-center" data-aos="flip-up" data-aos-delay="50">
+                    <span class="text-2xl md:text-4xl font-black mb-1">470M+</span>
+                    <span class="text-xs md:text-sm font-bold uppercase border-t-2 border-black pt-1 w-full">Impressions</span>
+                </div>
+                <div class="bg-cyan-200 border-2 border-black p-3 md:p-4 hard-shadow flex flex-col justify-center items-center text-center" data-aos="flip-up" data-aos-delay="100">
+                    <span class="text-2xl md:text-4xl font-black mb-1">15M+</span>
+                    <span class="text-xs md:text-sm font-bold uppercase border-t-2 border-black pt-1 w-full">Interactions</span>
+                </div>
+                <div class="bg-yellow-200 border-2 border-black p-3 md:p-4 hard-shadow flex flex-col justify-center items-center text-center" data-aos="flip-up" data-aos-delay="150">
+                    <span class="text-2xl md:text-4xl font-black mb-1">2M+</span>
+                    <span class="text-xs md:text-sm font-bold uppercase border-t-2 border-black pt-1 w-full">TikTok Fans</span>
+                </div>
+                <div class="bg-white border-2 border-black p-3 md:p-4 hard-shadow flex flex-col justify-center items-center text-center" data-aos="flip-up">
+                    <span class="text-2xl md:text-4xl font-black mb-1">$75k+</span>
+                    <span class="text-xs md:text-sm font-bold uppercase border-t-2 border-black pt-1 w-full">Ad Revenue</span>
+                </div>
+                <div class="bg-white border-2 border-black p-3 md:p-4 hard-shadow flex flex-col justify-center items-center text-center" data-aos="flip-up" data-aos-delay="50">
+                    <span class="text-2xl md:text-4xl font-black mb-1">12%</span>
+                    <span class="text-xs md:text-sm font-bold uppercase border-t-2 border-black pt-1 w-full">Blog Growth</span>
+                </div>
+                <div class="bg-white border-2 border-black p-3 md:p-4 hard-shadow flex flex-col justify-center items-center text-center" data-aos="flip-up" data-aos-delay="100">
+                    <span class="text-2xl md:text-4xl font-black mb-1">1M+</span>
+                    <span class="text-xs md:text-sm font-bold uppercase border-t-2 border-black pt-1 w-full">Zoo IG</span>
+                </div>
+                <div class="bg-white border-2 border-black p-3 md:p-4 hard-shadow flex flex-col justify-center items-center text-center" data-aos="flip-up" data-aos-delay="150">
+                    <span class="text-2xl md:text-4xl font-black mb-1">6+</span>
+                    <span class="text-xs md:text-sm font-bold uppercase border-t-2 border-black pt-1 w-full">Years Exp.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOCIAL / CONTENT SECTION -->
+    <section id="social" class="bg-yellow-300 border-b-4 border-black p-4 py-20 md:p-12 scroll-mt-20">
+        <div class="max-w-7xl mx-auto">
+            <h2 id="social-header" class="text-5xl md:text-7xl font-black uppercase mb-4 text-center" data-aos="zoom-in">
+                Social That Slaps
+            </h2>
+            <p class="text-center font-bold text-xl mb-12 bg-white border-2 border-black inline-block px-4 py-2 hard-shadow mx-auto relative left-1/2 -translate-x-1/2">
+                Latest & Greatest from the Feed
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white border-2 border-black p-4 hard-shadow flex flex-col h-full" data-aos="fade-up">
+                    <h3 class="font-black uppercase text-lg mb-4 border-b-2 border-black pb-2">Poop Candle Review</h3>
+                    <div class="flex-grow flex items-center justify-center bg-gray-50 min-h-[450px] border border-gray-200 relative mb-4">
+                        <span class="absolute text-gray-400 font-bold text-center p-4 text-sm z-0">Loading Embed...</span>
+                        <blockquote class="instagram-media relative z-10 w-full" data-instgrm-permalink="https://www.instagram.com/p/DFvyUTxC4tV/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:none; margin: 0; padding:0; width:100%;">
+                            <a href="https://www.instagram.com/p/DFvyUTxC4tV/" style="text-decoration:none; display: block; height: 100%; width: 100%;"></a>
+                        </blockquote>
+                    </div>
+                    <a href="https://www.instagram.com/p/DFvyUTxC4tV/" target="_blank" class="block text-center bg-black text-white font-bold py-3 hover:bg-fuchsia-500 transition-colors uppercase text-sm border-2 border-black btn-push">View on Instagram ↗</a>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white border-2 border-black p-4 hard-shadow flex flex-col h-full" data-aos="fade-up" data-aos-delay="50">
+                    <h3 class="font-black uppercase text-lg mb-4 border-b-2 border-black pb-2">Christmas Promo Shoot</h3>
+                    <div class="flex-grow flex items-center justify-center bg-gray-50 min-h-[450px] border border-gray-200 relative mb-4">
+                        <span class="absolute text-gray-400 font-bold text-center p-4 text-sm z-0">Loading Embed...</span>
+                        <blockquote class="instagram-media relative z-10 w-full" data-instgrm-permalink="https://www.instagram.com/p/DEQBZEAO2N0/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:none; margin: 0; padding:0; width:100%;">
+                             <a href="https://www.instagram.com/p/DEQBZEAO2N0/" style="text-decoration:none; display: block; height: 100%; width: 100%;"></a>
+                        </blockquote>
+                    </div>
+                    <a href="https://www.instagram.com/p/DEQBZEAO2N0/" target="_blank" class="block text-center bg-black text-white font-bold py-3 hover:bg-fuchsia-500 transition-colors uppercase text-sm border-2 border-black btn-push">View on Instagram ↗</a>
+                </div>
+
+                <!-- HIDDEN ITEMS -->
+                <div class="bg-white border-2 border-black p-4 hard-shadow flex flex-col h-full social-hidden hidden">
+                    <h3 class="font-black uppercase text-lg mb-4 border-b-2 border-black pb-2">Turn Down for Watt?!</h3>
+                    <div class="flex-grow flex items-center justify-center bg-gray-50 min-h-[450px] border border-gray-200 relative mb-4">
+                         <span class="absolute text-gray-400 font-bold text-center p-4 text-sm z-0">Loading Embed...</span>
+                        <blockquote class="instagram-media relative z-10 w-full" data-instgrm-permalink="https://www.instagram.com/p/DD-NqB3POnN/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:none; margin: 0; padding:0; width:100%;">
+                             <a href="https://www.instagram.com/p/DD-NqB3POnN/" style="text-decoration:none; display: block; height: 100%; width: 100%;"></a>
+                        </blockquote>
+                    </div>
+                    <a href="https://www.instagram.com/p/DD-NqB3POnN/" target="_blank" class="block text-center bg-black text-white font-bold py-3 hover:bg-fuchsia-500 transition-colors uppercase text-sm border-2 border-black btn-push">View on Instagram ↗</a>
+                </div>
+                <div class="bg-white border-2 border-black p-4 hard-shadow flex flex-col h-full social-hidden hidden">
+                    <h3 class="font-black uppercase text-lg mb-4 border-b-2 border-black pb-2">Christmas Zone</h3>
+                    <div class="flex-grow flex items-center justify-center bg-gray-50 min-h-[450px] border border-gray-200 relative mb-4">
+                         <span class="absolute text-gray-400 font-bold text-center p-4 text-sm z-0">Loading Embed...</span>
+                        <blockquote class="instagram-media relative z-10 w-full" data-instgrm-permalink="https://www.instagram.com/p/DDxzTfJpGiI/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:none; margin: 0; padding:0; width:100%;">
+                            <a href="https://www.instagram.com/p/DDxzTfJpGiI/" style="text-decoration:none; display: block; height: 100%; width: 100%;"></a>
+                        </blockquote>
+                    </div>
+                    <a href="https://www.instagram.com/p/DDxzTfJpGiI/" target="_blank" class="block text-center bg-black text-white font-bold py-3 hover:bg-fuchsia-500 transition-colors uppercase text-sm border-2 border-black btn-push">View on Instagram ↗</a>
+                </div>
+                <div class="bg-white border-2 border-black p-4 hard-shadow flex flex-col h-full social-hidden hidden">
+                    <h3 class="font-black uppercase text-lg mb-4 border-b-2 border-black pb-2">5 Reasons to Visit</h3>
+                    <div class="flex-grow flex items-center justify-center bg-gray-50 min-h-[450px] border border-gray-200 relative mb-4">
+                         <span class="absolute text-gray-400 font-bold text-center p-4 text-sm z-0">Loading Embed...</span>
+                        <blockquote class="instagram-media relative z-10 w-full" data-instgrm-permalink="https://www.instagram.com/p/DDhPpkvvuU3/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:none; margin: 0; padding:0; width:100%;">
+                            <a href="https://www.instagram.com/p/DDhPpkvvuU3/" style="text-decoration:none; display: block; height: 100%; width: 100%;"></a>
+                        </blockquote>
+                    </div>
+                    <a href="https://www.instagram.com/p/DDhPpkvvuU3/" target="_blank" class="block text-center bg-black text-white font-bold py-3 hover:bg-fuchsia-500 transition-colors uppercase text-sm border-2 border-black btn-push">View on Instagram ↗</a>
+                </div>
+                <div class="bg-white border-2 border-black p-4 hard-shadow flex flex-col h-full social-hidden hidden">
+                    <h3 class="font-black uppercase text-lg mb-4 border-b-2 border-black pb-2">Zoo Lights Paid Ad</h3>
+                    <div class="flex-grow flex items-center justify-center bg-gray-50 min-h-[450px] border border-gray-200 relative mb-4">
+                         <span class="absolute text-gray-400 font-bold text-center p-4 text-sm z-0">Loading Embed...</span>
+                        <blockquote class="instagram-media relative z-10 w-full" data-instgrm-permalink="https://www.instagram.com/p/DDfvmdNM1da/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:none; margin: 0; padding:0; width:100%;">
+                            <a href="https://www.instagram.com/p/DDfvmdNM1da/" style="text-decoration:none; display: block; height: 100%; width: 100%;"></a>
+                        </blockquote>
+                    </div>
+                    <a href="https://www.instagram.com/p/DDfvmdNM1da/" target="_blank" class="block text-center bg-black text-white font-bold py-3 hover:bg-fuchsia-500 transition-colors uppercase text-sm border-2 border-black btn-push">View on Instagram ↗</a>
+                </div>
+                 <div class="bg-white border-2 border-black p-4 hard-shadow flex flex-col h-full social-hidden hidden">
+                    <h3 class="font-black uppercase text-lg mb-4 border-b-2 border-black pb-2">Gen Z Slang Trend Pt. 2</h3>
+                    <div class="flex-grow flex items-center justify-center bg-gray-50 min-h-[450px] border border-gray-200 relative mb-4">
+                         <span class="absolute text-gray-400 font-bold text-center p-4 text-sm z-0">Loading Embed...</span>
+                        <blockquote class="instagram-media relative z-10 w-full" data-instgrm-permalink="https://www.instagram.com/p/DDSp53EJCm6/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:none; margin: 0; padding:0; width:100%;">
+                             <a href="https://www.instagram.com/p/DDSp53EJCm6/" style="text-decoration:none; display: block; height: 100%; width: 100%;"></a>
+                        </blockquote>
+                    </div>
+                    <a href="https://www.instagram.com/p/DDSp53EJCm6/" target="_blank" class="block text-center bg-black text-white font-bold py-3 hover:bg-fuchsia-500 transition-colors uppercase text-sm border-2 border-black btn-push">View on Instagram ↗</a>
+                </div>
+                <div class="bg-white border-2 border-black p-4 hard-shadow flex flex-col h-full social-hidden hidden">
+                    <h3 class="font-black uppercase text-lg mb-4 border-b-2 border-black pb-2">Community UGC</h3>
+                    <div class="flex-grow flex items-center justify-center bg-gray-50 min-h-[450px] border border-gray-200 relative mb-4">
+                         <span class="absolute text-gray-400 font-bold text-center p-4 text-sm z-0">Loading Embed...</span>
+                        <blockquote class="instagram-media relative z-10 w-full" data-instgrm-permalink="https://www.instagram.com/p/DCkhLKmNvK8/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:none; margin: 0; padding:0; width:100%;">
+                             <a href="https://www.instagram.com/p/DCkhLKmNvK8/" style="text-decoration:none; display: block; height: 100%; width: 100%;"></a>
+                        </blockquote>
+                    </div>
+                    <a href="https://www.instagram.com/p/DCkhLKmNvK8/" target="_blank" class="block text-center bg-black text-white font-bold py-3 hover:bg-fuchsia-500 transition-colors uppercase text-sm border-2 border-black btn-push">View on Instagram ↗</a>
+                </div>
+                <div class="bg-white border-2 border-black p-4 hard-shadow flex flex-col h-full social-hidden hidden">
+                    <h3 class="font-black uppercase text-lg mb-4 border-b-2 border-black pb-2">Capybara Naming</h3>
+                    <div class="flex-grow flex items-center justify-center bg-gray-50 min-h-[450px] border border-gray-200 relative mb-4">
+                         <span class="absolute text-gray-400 font-bold text-center p-4 text-sm z-0">Loading Embed...</span>
+                        <blockquote class="instagram-media relative z-10 w-full" data-instgrm-permalink="https://www.instagram.com/p/DEnTfreMCnq/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:none; margin: 0; padding:0; width:100%;">
+                             <a href="https://www.instagram.com/p/DEnTfreMCnq/" style="text-decoration:none; display: block; height: 100%; width: 100%;"></a>
+                        </blockquote>
+                    </div>
+                    <a href="https://www.instagram.com/p/DEnTfreMCnq/" target="_blank" class="block text-center bg-black text-white font-bold py-3 hover:bg-fuchsia-500 transition-colors uppercase text-sm border-2 border-black btn-push">View on Instagram ↗</a>
+                </div>
+                <div class="bg-white border-2 border-black p-4 hard-shadow flex flex-col h-full social-hidden hidden">
+                    <h3 class="font-black uppercase text-lg mb-4 border-b-2 border-black pb-2">Spring Break Promo</h3>
+                    <div class="flex-grow flex items-center justify-center bg-gray-50 min-h-[450px] border border-gray-200 relative mb-4">
+                         <span class="absolute text-gray-400 font-bold text-center p-4 text-sm z-0">Loading Embed...</span>
+                        <blockquote class="instagram-media relative z-10 w-full" data-instgrm-permalink="https://www.instagram.com/reel/DGlCWrhpx-x/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:none; margin: 0; padding:0; width:100%;">
+                             <a href="https://www.instagram.com/reel/DGlCWrhpx-x/" style="text-decoration:none; display: block; height: 100%; width: 100%;"></a>
+                        </blockquote>
+                    </div>
+                    <a href="https://www.instagram.com/reel/DGlCWrhpx-x/" target="_blank" class="block text-center bg-black text-white font-bold py-3 hover:bg-fuchsia-500 transition-colors uppercase text-sm border-2 border-black btn-push">View on Instagram ↗</a>
+                </div>
+                <div class="bg-white border-2 border-black p-4 hard-shadow flex flex-col h-full social-hidden hidden">
+                    <h3 class="font-black uppercase text-lg mb-4 border-b-2 border-black pb-2">Valentine's Day</h3>
+                    <div class="flex-grow flex items-center justify-center bg-gray-50 min-h-[450px] border border-gray-200 relative mb-4">
+                        <span class="absolute text-gray-400 font-bold text-center p-4 text-sm z-0">Loading Embed...</span>
+                        <blockquote class="instagram-media relative z-10 w-full" data-instgrm-permalink="https://www.instagram.com/reel/DGEuaQcx1tp/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:none; margin: 0; padding:0; width:100%;">
+                            <a href="https://www.instagram.com/reel/DGEuaQcx1tp/" style="text-decoration:none; display: block; height: 100%; width: 100%;"></a>
+                        </blockquote>
+                    </div>
+                    <a href="https://www.instagram.com/reel/DGEuaQcx1tp/" target="_blank" class="block text-center bg-black text-white font-bold py-3 hover:bg-fuchsia-500 transition-colors uppercase text-sm border-2 border-black btn-push">View on Instagram ↗</a>
+                </div>
+            </div>
+
+             <!-- LOAD MORE BUTTON -->
+             <div class="text-center mt-12">
+                <button onclick="toggleSocial()" id="social-toggle-btn" class="px-8 py-4 text-xl font-black uppercase bg-black text-white border-2 border-white hover:bg-white hover:text-black hover:border-black transition-all hard-shadow btn-push">
+                    Show More Chaos 👇
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- WRITING SECTION -->
+    <section id="writing" class="p-4 py-20 md:p-12 bg-white border-b-4 border-black scroll-mt-20">
+        <div class="max-w-7xl mx-auto">
+            <h2 id="writing-header" class="text-5xl md:text-6xl font-black uppercase mb-8 border-l-8 border-black pl-6">
+                The Write Stuff
+            </h2>
+            <p class="mb-8 text-xl max-w-2xl">
+                From scroll-stopping copy to SEO-rich storytelling — here’s the good stuff.
+            </p>
+
+            <!-- Filters -->
+            <div class="flex flex-wrap gap-4 mb-12">
+                <button onclick="filterWriting('all')" class="filter-btn active px-6 py-2 border-2 border-black font-bold uppercase transition-all hover:bg-black hover:text-white">All</button>
+                <button onclick="filterWriting('blog')" class="filter-btn px-6 py-2 border-2 border-black font-bold uppercase transition-all hover:bg-black hover:text-white">Blogs</button>
+                <button onclick="filterWriting('press')" class="filter-btn px-6 py-2 border-2 border-black font-bold uppercase transition-all hover:bg-black hover:text-white">Press Releases</button>
+                <button onclick="filterWriting('careers')" class="filter-btn px-6 py-2 border-2 border-black font-bold uppercase transition-all hover:bg-black hover:text-white">Careers</button>
+                <button onclick="filterWriting('product')" class="filter-btn px-6 py-2 border-2 border-black font-bold uppercase transition-all hover:bg-black hover:text-white">Product Docs</button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="writing-grid">
+                
+                <!-- VISIBLE BY DEFAULT (Top 4) -->
+                <div class="writing-item blog bg-gray-50 border-2 border-black p-6 hard-shadow flex flex-col justify-between">
+                    <div>
+                        <span class="inline-block px-2 py-1 bg-lime-300 border border-black text-xs font-bold uppercase mb-2">Blog</span>
+                        <h3 class="text-2xl font-black uppercase mb-2">Love is Wild: Valentines Day 2025</h3>
+                        <p class="font-bold text-gray-500 mb-4">San Antonio Zoo</p>
+                    </div>
+                    <a href="https://sazoo.org/love-is-wild-why-san-antonio-zoo-is-the-valentines-day-capital-of-the-world/" target="_blank" class="text-fuchsia-600 font-bold hover:underline uppercase">Read More -></a>
+                </div>
+
+                <div class="writing-item blog bg-gray-50 border-2 border-black p-6 hard-shadow flex flex-col justify-between">
+                     <div>
+                        <span class="inline-block px-2 py-1 bg-lime-300 border border-black text-xs font-bold uppercase mb-2">Blog</span>
+                        <h3 class="text-2xl font-black uppercase mb-2">Happy Zoo Year, New You!</h3>
+                        <p class="font-bold text-gray-500 mb-4">San Antonio Zoo</p>
+                    </div>
+                    <a href="https://sazoo.org/zoo-year-new-you/" target="_blank" class="text-fuchsia-600 font-bold hover:underline uppercase">Read More -></a>
+                </div>
+
+                <div class="writing-item blog bg-gray-50 border-2 border-black p-6 hard-shadow flex flex-col justify-between">
+                     <div>
+                        <span class="inline-block px-2 py-1 bg-lime-300 border border-black text-xs font-bold uppercase mb-2">Blog</span>
+                        <h3 class="text-2xl font-black uppercase mb-2">Top Reasons to Become a Member</h3>
+                        <p class="font-bold text-gray-500 mb-4">San Antonio Zoo</p>
+                    </div>
+                    <a href="https://sazoo.org/top-reasons-to-become-a-member-at-san-antonio-zoo/" target="_blank" class="text-fuchsia-600 font-bold hover:underline uppercase">Read More -></a>
+                </div>
+
+                <div class="writing-item blog bg-gray-50 border-2 border-black p-6 hard-shadow flex flex-col justify-between">
+                     <div>
+                        <span class="inline-block px-2 py-1 bg-lime-300 border border-black text-xs font-bold uppercase mb-2">Blog</span>
+                        <h3 class="text-2xl font-black uppercase mb-2">Empowering the Future: Hispanic Serving Institutions</h3>
+                        <p class="font-bold text-gray-500 mb-4">Overland Partners</p>
+                    </div>
+                    <a href="https://www.overlandpartners.com/empowering-the-future-hispanic-serving-institutions-excellence-in-higher-education-through-design/" target="_blank" class="text-fuchsia-600 font-bold hover:underline uppercase">Read More -></a>
+                </div>
+
+                <!-- HIDDEN BY DEFAULT (Extras) -->
+                <div class="writing-item writing-extra press hidden bg-gray-50 border-2 border-black p-6 hard-shadow flex flex-col justify-between">
+                    <div>
+                        <span class="inline-block px-2 py-1 bg-cyan-300 border border-black text-xs font-bold uppercase mb-2">Press Release</span>
+                        <h3 class="text-2xl font-black uppercase mb-2">SA Zoo Announces Overnight Lodge</h3>
+                        <p class="font-bold text-gray-500 mb-4">San Antonio Zoo</p>
+                    </div>
+                    <a href="https://sanantoniozoo.app.box.com/s/evjd2lncwhjr6vallo41xxg759jnplh3" target="_blank" class="text-fuchsia-600 font-bold hover:underline uppercase">Read More -></a>
+                </div>
+
+                <div class="writing-item writing-extra press hidden bg-gray-50 border-2 border-black p-6 hard-shadow flex flex-col justify-between">
+                    <div>
+                        <span class="inline-block px-2 py-1 bg-cyan-300 border border-black text-xs font-bold uppercase mb-2">Press Release</span>
+                        <h3 class="text-2xl font-black uppercase mb-2">Dr Fenolio Honored as Finalist</h3>
+                        <p class="font-bold text-gray-500 mb-4">San Antonio Zoo</p>
+                    </div>
+                    <a href="https://sanantoniozoo.app.box.com/s/a8suj2i5fwwqihharsu2po0lz7et4rsr/file/1667702516920" target="_blank" class="text-fuchsia-600 font-bold hover:underline uppercase">Read More -></a>
+                </div>
+
+                <div class="writing-item writing-extra press hidden bg-gray-50 border-2 border-black p-6 hard-shadow flex flex-col justify-between">
+                     <div>
+                        <span class="inline-block px-2 py-1 bg-cyan-300 border border-black text-xs font-bold uppercase mb-2">Press Release</span>
+                        <h3 class="text-2xl font-black uppercase mb-2">Locals Day at SA Zoo</h3>
+                        <p class="font-bold text-gray-500 mb-4">San Antonio Zoo</p>
+                    </div>
+                    <a href="https://sanantoniozoo.app.box.com/s/a8suj2i5fwwqihharsu2po0lz7et4rsr/file/1655254341378" target="_blank" class="text-fuchsia-600 font-bold hover:underline uppercase">Read More -></a>
+                </div>
+
+                <div class="writing-item writing-extra press hidden bg-gray-50 border-2 border-black p-6 hard-shadow flex flex-col justify-between">
+                     <div>
+                        <span class="inline-block px-2 py-1 bg-cyan-300 border border-black text-xs font-bold uppercase mb-2">Press Release</span>
+                        <h3 class="text-2xl font-black uppercase mb-2">Overland Appoints New Leadership Team</h3>
+                        <p class="font-bold text-gray-500 mb-4">Overland Partners</p>
+                    </div>
+                    <a href="https://www.overlandpartners.com/overland-appoints-new-president-and-leadership-team-for-bold-future-of-firm/" target="_blank" class="text-fuchsia-600 font-bold hover:underline uppercase">Read More -></a>
+                </div>
+
+                <div class="writing-item writing-extra press hidden bg-gray-50 border-2 border-black p-6 hard-shadow flex flex-col justify-between">
+                     <div>
+                        <span class="inline-block px-2 py-1 bg-cyan-300 border border-black text-xs font-bold uppercase mb-2">Press Release</span>
+                        <h3 class="text-2xl font-black uppercase mb-2">New Downtown Hotel</h3>
+                        <p class="font-bold text-gray-500 mb-4">Overland Partners</p>
+                    </div>
+                    <a href="https://www.overlandpartners.com/zachry-breaks-ground-on-new-downtown-san-antonio-hotel/" target="_blank" class="text-fuchsia-600 font-bold hover:underline uppercase">Read More -></a>
+                </div>
+
+                 <div class="writing-item writing-extra press hidden bg-gray-50 border-2 border-black p-6 hard-shadow flex flex-col justify-between">
+                     <div>
+                        <span class="inline-block px-2 py-1 bg-cyan-300 border border-black text-xs font-bold uppercase mb-2">Press Release</span>
+                        <h3 class="text-2xl font-black uppercase mb-2">Zion National Park New Renderings</h3>
+                        <p class="font-bold text-gray-500 mb-4">Overland Partners</p>
+                    </div>
+                    <a href="https://www.overlandpartners.com/overland-partners-architects-unveil-new-renderings-for-conservation-focused-zion-national-park-discovery-center/" target="_blank" class="text-fuchsia-600 font-bold hover:underline uppercase">Read More -></a>
+                </div>
+
+                <div class="writing-item writing-extra careers hidden bg-gray-50 border-2 border-black p-6 hard-shadow flex flex-col justify-between">
+                     <div>
+                        <span class="inline-block px-2 py-1 bg-yellow-300 border border-black text-xs font-bold uppercase mb-2">Careers</span>
+                        <h3 class="text-2xl font-black uppercase mb-2">Careers Page Content</h3>
+                        <p class="font-bold text-gray-500 mb-4">Overland Partners</p>
+                    </div>
+                    <a href="https://overlandpartners.pinpointhq.com/" target="_blank" class="text-fuchsia-600 font-bold hover:underline uppercase">Read More -></a>
+                </div>
+
+                <div class="writing-item writing-extra product hidden bg-gray-50 border-2 border-black p-6 hard-shadow flex flex-col justify-between">
+                     <div>
+                        <span class="inline-block px-2 py-1 bg-fuchsia-300 border border-black text-xs font-bold uppercase mb-2">Product Docs</span>
+                        <h3 class="text-2xl font-black uppercase mb-2">How to Use Linkup CRM</h3>
+                        <p class="font-bold text-gray-500 mb-4">BenCampbell Docs</p>
+                    </div>
+                    <a href="https://help.followup.cc/en/" target="_blank" class="text-fuchsia-600 font-bold hover:underline uppercase">Read More -></a>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button onclick="toggleWriting()" id="writing-toggle-btn" class="px-8 py-4 text-xl font-black uppercase bg-black text-white border-2 border-white hover:bg-white hover:text-black hover:border-black transition-all hard-shadow btn-push">
+                    Show All Writing 👇
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- VIDEO SECTION -->
+    <section id="video" class="bg-black text-white p-4 py-20 md:p-12 border-b-4 border-white scroll-mt-20">
+        <div class="max-w-7xl mx-auto">
+            <h2 id="video-header" class="text-5xl md:text-7xl font-black uppercase text-white mb-6">
+                Video <span class="text-fuchsia-500">Vault</span>
+            </h2>
+            <p class="text-gray-400 text-xl mb-8">From livestreams to storyboards — enjoy my video-centric creations.</p>
+
+            <div class="bg-neutral-900 border-2 border-white p-6 mb-12 hard-shadow-lime text-left">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-lime-300 font-black uppercase mb-4 text-xl border-b border-gray-700 pb-2">Production Skills</h3>
+                        <p class="text-gray-300 leading-relaxed font-medium">
+                            Storyboarding · Content Strategy · Scripting · Filming · Editing · Producing · Post Production · Project Management · Livestreaming
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="text-fuchsia-400 font-black uppercase mb-4 text-xl border-b border-gray-700 pb-2">Software Arsenal</h3>
+                         <p class="text-gray-300 leading-relaxed font-medium">
+                            Adobe Premiere · Final Cut Pro · CapCut · Canva · Adobe Photoshop
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video Filters -->
+            <div class="flex flex-wrap gap-4 mb-12 justify-center md:justify-start">
+                <button onclick="filterVideo('all')" class="video-filter-btn active px-6 py-2 border-2 border-white bg-black text-white font-bold uppercase transition-all hover:bg-white hover:text-black">All</button>
+                <button onclick="filterVideo('Codeup')" class="video-filter-btn px-6 py-2 border-2 border-white bg-black text-white font-bold uppercase transition-all hover:bg-white hover:text-black">Codeup</button>
+                <button onclick="filterVideo('Zoo')" class="video-filter-btn px-6 py-2 border-2 border-white bg-black text-white font-bold uppercase transition-all hover:bg-white hover:text-black">San Antonio Zoo</button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- VISIBLE BY DEFAULT (Top 2: 1 Codeup, 1 Zoo) -->
+                <div class="video-card Codeup bg-neutral-900 border-2 border-white p-4 hard-shadow-fuchsia group">
+                    <span class="inline-block px-2 py-1 bg-fuchsia-500 text-white border border-white text-xs font-bold uppercase mb-3">Codeup</span>
+                    <h3 class="font-bold text-lg mb-4 h-12 line-clamp-2">Student Experience Team Overview</h3>
+                    <div class="relative w-full aspect-video bg-gray-800 cursor-pointer overflow-hidden border border-white video-thumb" data-id="fIGYmHgtnHI">
+                        <img src="https://img.youtube.com/vi/fIGYmHgtnHI/hqdefault.jpg" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity">
+                        <div class="absolute inset-0 flex items-center justify-center play-overlay">
+                            <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center play-icon">
+                                <div class="w-0 h-0 border-t-[8px] border-t-transparent border-l-[16px] border-l-black border-b-[8px] border-b-transparent ml-1"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-card Zoo bg-neutral-900 border-2 border-white p-4 hard-shadow-lime group">
+                    <span class="inline-block px-2 py-1 bg-lime-500 text-black border border-white text-xs font-bold uppercase mb-3">San Antonio Zoo</span>
+                    <h3 class="font-bold text-lg mb-4 h-12 line-clamp-2">Fundraising Video</h3>
+                    <div class="relative w-full aspect-video bg-gray-800 cursor-pointer overflow-hidden border border-white video-thumb" data-id="eBAaybiEfkw">
+                        <img src="https://img.youtube.com/vi/eBAaybiEfkw/hqdefault.jpg" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity">
+                        <div class="absolute inset-0 flex items-center justify-center play-overlay">
+                            <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center play-icon">
+                                <div class="w-0 h-0 border-t-[8px] border-t-transparent border-l-[16px] border-l-black border-b-[8px] border-b-transparent ml-1"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- HIDDEN BY DEFAULT (Extras) -->
+                <div class="video-card video-extra Codeup hidden bg-neutral-900 border-2 border-white p-4 hard-shadow-fuchsia group">
+                    <span class="inline-block px-2 py-1 bg-fuchsia-500 text-white border border-white text-xs font-bold uppercase mb-3">Codeup</span>
+                    <h3 class="font-bold text-lg mb-4 h-12 line-clamp-2">Financial Aid Walkthrough</h3>
+                    <div class="relative w-full aspect-video bg-gray-800 cursor-pointer overflow-hidden border border-white video-thumb" data-id="yY3gQb3aOw4">
+                        <img src="https://img.youtube.com/vi/yY3gQb3aOw4/hqdefault.jpg" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity">
+                        <div class="absolute inset-0 flex items-center justify-center play-overlay">
+                            <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center play-icon">
+                                <div class="w-0 h-0 border-t-[8px] border-t-transparent border-l-[16px] border-l-black border-b-[8px] border-b-transparent ml-1"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-card video-extra Codeup hidden bg-neutral-900 border-2 border-white p-4 hard-shadow-fuchsia group">
+                    <span class="inline-block px-2 py-1 bg-fuchsia-500 text-white border border-white text-xs font-bold uppercase mb-3">Codeup</span>
+                    <h3 class="font-bold text-lg mb-4 h-12 line-clamp-2">Job Promise Social Media Video</h3>
+                    <div class="relative w-full aspect-video bg-gray-800 cursor-pointer overflow-hidden border border-white video-thumb" data-id="abbcUgqDtoA">
+                        <img src="https://img.youtube.com/vi/abbcUgqDtoA/hqdefault.jpg" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity">
+                        <div class="absolute inset-0 flex items-center justify-center play-overlay">
+                            <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center play-icon">
+                                <div class="w-0 h-0 border-t-[8px] border-t-transparent border-l-[16px] border-l-black border-b-[8px] border-b-transparent ml-1"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-card video-extra Zoo hidden bg-neutral-900 border-2 border-white p-4 hard-shadow-lime group">
+                    <span class="inline-block px-2 py-1 bg-lime-500 text-black border border-white text-xs font-bold uppercase mb-3">San Antonio Zoo</span>
+                    <h3 class="font-bold text-lg mb-4 h-12 line-clamp-2">End of Year Recap</h3>
+                    <div class="relative w-full aspect-video bg-gray-800 cursor-pointer overflow-hidden border border-white video-thumb" data-id="QID9grQsAi8">
+                        <img src="https://img.youtube.com/vi/QID9grQsAi8/hqdefault.jpg" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity">
+                        <div class="absolute inset-0 flex items-center justify-center play-overlay">
+                            <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center play-icon">
+                                <div class="w-0 h-0 border-t-[8px] border-t-transparent border-l-[16px] border-l-black border-b-[8px] border-b-transparent ml-1"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-card video-extra Zoo hidden bg-neutral-900 border-2 border-white p-4 hard-shadow-lime group">
+                    <span class="inline-block px-2 py-1 bg-lime-500 text-black border border-white text-xs font-bold uppercase mb-3">San Antonio Zoo</span>
+                    <h3 class="font-bold text-lg mb-4 h-12 line-clamp-2">Wildlife Rescue Sizzle Reel</h3>
+                    <div class="relative w-full aspect-video bg-gray-800 cursor-pointer overflow-hidden border border-white video-thumb" data-id="Kau9MVfnTVU">
+                        <img src="https://img.youtube.com/vi/Kau9MVfnTVU/hqdefault.jpg" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity">
+                        <div class="absolute inset-0 flex items-center justify-center play-overlay">
+                            <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center play-icon">
+                                <div class="w-0 h-0 border-t-[8px] border-t-transparent border-l-[16px] border-l-black border-b-[8px] border-b-transparent ml-1"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-card video-extra Zoo hidden bg-neutral-900 border-2 border-white p-4 hard-shadow-lime group">
+                    <span class="inline-block px-2 py-1 bg-lime-500 text-black border border-white text-xs font-bold uppercase mb-3">San Antonio Zoo</span>
+                    <h3 class="font-bold text-lg mb-4 h-12 line-clamp-2">Zoo School Pen Pal Letter</h3>
+                    <div class="relative w-full aspect-video bg-gray-800 cursor-pointer overflow-hidden border border-white video-thumb" data-id="QNOM9LmNyGM">
+                        <img src="https://img.youtube.com/vi/QNOM9LmNyGM/hqdefault.jpg" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity">
+                        <div class="absolute inset-0 flex items-center justify-center play-overlay">
+                            <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center play-icon">
+                                <div class="w-0 h-0 border-t-[8px] border-t-transparent border-l-[16px] border-l-black border-b-[8px] border-b-transparent ml-1"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+             <div class="text-center mt-12">
+                <button onclick="toggleVideo()" id="video-toggle-btn" class="px-8 py-4 text-xl font-black uppercase bg-black text-white border-2 border-white hover:bg-white hover:text-black hover:border-black transition-all hard-shadow btn-push">
+                    Show All Videos 👇
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- BUILDER MODE SECTION (SECRET VAULT) -->
+    <section id="builder" class="bg-indigo-900 text-white p-4 py-20 md:p-12 border-b-4 border-black scroll-mt-20 relative overflow-hidden hidden">
+        
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#fff 1px, transparent 1px); background-size: 20px 20px;"></div>
+
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-5xl md:text-7xl font-black uppercase text-white">
+                    Builder <span class="text-yellow-400">Mode</span>
+                </h2>
+                <button onclick="unlockVault()" class="bg-red-500 text-white font-bold uppercase px-4 py-2 border-2 border-white hover:bg-red-600 transition-colors">
+                    Close Vault X
+                </button>
+            </div>
+            
+            <p class="text-indigo-200 text-xl mb-12">
+                When I'm not strategizing content, I'm coding chaos. Welcome to the lab.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Project 1: Plot Twisted -->
+                <div class="bg-white text-black border-4 border-black p-6 hard-shadow-red transform hover:-translate-y-2 transition-transform duration-300">
+                    <div class="h-12 w-12 bg-red-500 border-2 border-black flex items-center justify-center text-2xl mb-4">🍿</div>
+                    <h3 class="text-2xl font-black uppercase mb-2">Plot Twisted: Cinema Edition</h3>
+                    <p class="font-medium mb-6">A movie trivia platform where the plot is the puzzle. Test your film knowledge against twisted descriptions.</p>
+                    <a href="#" class="inline-block w-full text-center bg-black text-white font-bold uppercase py-3 border-2 border-transparent hover:bg-red-500 hover:text-black hover:border-black transition-colors">
+                        Play Game
+                    </a>
+                </div>
+
+                <!-- Project 2: High Stakes Truth -->
+                <div class="bg-white text-black border-4 border-black p-6 hard-shadow-fuchsia transform hover:-translate-y-2 transition-transform duration-300">
+                    <div class="h-12 w-12 bg-fuchsia-500 border-2 border-black flex items-center justify-center text-2xl mb-4">🔥</div>
+                    <h3 class="text-2xl font-black uppercase mb-2">High Stakes Truth</h3>
+                    <p class="font-medium mb-6">A digital party game that forces honesty or consequences. Not for the faint of heart.</p>
+                    <a href="#" class="inline-block w-full text-center bg-black text-white font-bold uppercase py-3 border-2 border-transparent hover:bg-fuchsia-500 hover:text-black hover:border-black transition-colors">
+                        Start Game
+                    </a>
+                </div>
+
+                <!-- Project 3: Signal -->
+                <div class="bg-white text-black border-4 border-black p-6 hard-shadow-cyan transform hover:-translate-y-2 transition-transform duration-300">
+                    <div class="h-12 w-12 bg-cyan-400 border-2 border-black flex items-center justify-center text-2xl mb-4">📡</div>
+                    <h3 class="text-2xl font-black uppercase mb-2">Signal</h3>
+                    <p class="font-medium mb-6">A Gmail extension personal CRM. Track relationships, set follow-ups, and never drop the ball again.</p>
+                    <a href="#" class="inline-block w-full text-center bg-black text-white font-bold uppercase py-3 border-2 border-transparent hover:bg-cyan-400 hover:text-black hover:border-black transition-colors">
+                        View App
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contact" class="bg-lime-300 p-8 pt-20 border-t-2 border-black relative overflow-hidden">
+        
+        <!-- CHAOS MODE BUTTON -->
+        <div class="absolute top-4 right-4 z-20">
+            <button onclick="toggleChaos()" class="bg-red-500 text-white border-2 border-black font-black uppercase px-4 py-2 text-xs md:text-sm hover:bg-red-600 transition-colors hard-shadow">
+                ⚠️ DO NOT PRESS
+            </button>
+        </div>
+
+        <div class="max-w-7xl mx-auto relative z-10 text-center">
+            <h2 class="text-6xl md:text-8xl font-black uppercase mb-8 leading-none">
+                GET IN TOUCH
+            </h2>
+            <p class="text-xl md:text-2xl font-bold bg-white inline-block px-6 py-3 border-2 border-black hard-shadow-fuchsia mb-12 rotate-2">
+                "Responds faster than your ex after seeing your glow-up on Instagram" <br>
+                <span class="text-sm font-normal">– My clients, probably</span>
+            </p>
+            <div class="block mb-16">
+                <a href="mailto:hirebencampbell@gmail.com" class="inline-block px-12 py-6 text-2xl md:text-4xl font-black text-white bg-black border-4 border-black hard-shadow hover:bg-neutral-800 transition-colors btn-push uppercase">
+                    Email Ben
+                </a>
+            </div>
+            <div class="flex flex-col md:flex-row justify-between items-end border-t-4 border-black pt-8">
+                <div class="text-left mb-8 md:mb-0">
+                    <p class="font-bold text-xl uppercase">Ben Campbell Creative © 2025</p>
+                </div>
+                <div class="flex gap-4">
+                    <a href="https://x.com/Ben_Soup" target="_blank" class="w-12 h-12 flex items-center justify-center border-2 border-black bg-white hover:bg-fuchsia-500 hover:text-white transition-colors font-bold text-xl">X</a>
+                    <a href="https://linkedin.com/in/bencampbell8" target="_blank" class="w-12 h-12 flex items-center justify-center border-2 border-black bg-white hover:bg-fuchsia-500 hover:text-white transition-colors font-bold text-xl">Li</a>
+                    <a href="https://instagram.com/bensoup" target="_blank" class="w-12 h-12 flex items-center justify-center border-2 border-black bg-white hover:bg-fuchsia-500 hover:text-white transition-colors font-bold text-xl">Ig</a>
+                    <a href="https://github.com/kylozenzen" target="_blank" class="w-12 h-12 flex items-center justify-center border-2 border-black bg-white hover:bg-fuchsia-500 hover:text-white transition-colors font-bold text-xl">Gh</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- HIDDEN NOTEPAD & JUICE BOX -->
+    <div id="juice-box-counter" class="fixed bottom-4 left-4 z-50 bg-white border-2 border-black p-3 font-bold hard-shadow flex items-center gap-3 easter-egg-box">
+        <span>🧃 Juice Boxes: <span id="juice-count" class="text-fuchsia-500 text-xl">0</span></span>
+        <button onclick="addJuice()" class="bg-black text-white px-2 py-1 text-xs uppercase hover:bg-lime-400 hover:text-black transition-colors border border-black">
+            +1 Sip
+        </button>
+    </div>
+    
+    <div id="notepad" class="fixed top-24 left-1/2 -translate-x-1/2 w-[90%] md:w-[500px] bg-yellow-100 border-4 border-black p-4 z-[100] hard-shadow hidden">
+        <div class="flex justify-between items-center mb-4 border-b-2 border-black pb-2">
+            <h3 class="font-black uppercase text-xl">📝 Secret Ideas</h3>
+            <button onclick="toggleNotepad()" class="font-bold hover:text-red-600">X CLOSE</button>
+        </div>
+        <textarea class="w-full h-64 bg-white border-2 border-black p-2 font-mono text-sm resize-none focus:outline-none focus:ring-2 focus:ring-fuchsia-500" placeholder="Type your secret viral ideas here..."></textarea>
+    </div>
+
+    <!-- KONAMI CODE ALERT MODAL -->
+    <div id="konami-modal" class="fixed inset-0 z-[100] flex items-center justify-center bg-black bg-opacity-90 hidden">
+        <div class="bg-white border-4 border-lime-400 p-8 max-w-md text-center hard-shadow-fuchsia transform rotate-2">
+            <h2 class="text-4xl font-black uppercase mb-4">🦍 GORILLA MODE ACTIVATED</h2>
+            <p class="text-xl font-bold mb-6">You found the secret code! My wife says "Hi".</p>
+            <button onclick="document.getElementById('konami-modal').classList.add('hidden')" class="bg-black text-white font-bold uppercase px-6 py-3 border-2 border-black hover:bg-lime-400 hover:text-black transition-colors">
+                Close
+            </button>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script async src="https://www.instagram.com/embed.js"></script>
+    <script>
+        AOS.init({ once: true, duration: 800, offset: 50, easing: 'ease-out-cubic' });
+
+        // Juice Box Logic
+        let count = 0;
+        function addJuice() {
+            count++;
+            document.getElementById('juice-count').innerText = count;
+            const btn = document.getElementById('juice-box-counter');
+            btn.style.transform = "scale(1.1)";
+            setTimeout(() => { btn.style.transform = "scale(1)"; }, 100);
+        }
+
+        function toggleNotepad() {
+            document.getElementById('notepad').classList.toggle('hidden');
+        }
+
+        function toggleChaos() {
+            document.body.classList.toggle('chaos-active');
+        }
+
+        // SOCIAL TOGGLE
+        function toggleSocial() {
+            const hiddenPosts = document.querySelectorAll('.social-hidden');
+            const btn = document.getElementById('social-toggle-btn');
+            const header = document.getElementById('social-header');
+            hiddenPosts.forEach(post => post.classList.toggle('hidden'));
+            if (btn.innerText.includes('MORE')) {
+                btn.innerText = 'Show Less Chaos ☝️';
+                if (window.instgrm) window.instgrm.Embeds.process();
+            } else {
+                btn.innerText = 'Show More Chaos 👇';
+                header.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
+        // WRITING TOGGLE
+        function toggleWriting() {
+            const extras = document.querySelectorAll('.writing-extra');
+            const btn = document.getElementById('writing-toggle-btn');
+            const header = document.getElementById('writing-header');
+            const isHidden = extras[0].classList.contains('hidden');
+            if (isHidden) {
+                extras.forEach(item => item.classList.remove('hidden'));
+                btn.innerText = 'Show Less Writing ☝️';
+            } else {
+                extras.forEach(item => item.classList.add('hidden'));
+                btn.innerText = 'Show All Writing 👇';
+                header.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
+        // VIDEO TOGGLE
+        function toggleVideo() {
+            const extras = document.querySelectorAll('.video-extra');
+            const btn = document.getElementById('video-toggle-btn');
+            const header = document.getElementById('video-header');
+            const isHidden = extras[0].classList.contains('hidden');
+            if (isHidden) {
+                extras.forEach(item => item.classList.remove('hidden'));
+                btn.innerText = 'Show Less Videos ☝️';
+            } else {
+                extras.forEach(item => item.classList.add('hidden'));
+                btn.innerText = 'Show All Videos 👇';
+                header.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
+        // VAULT TOGGLE (Builder Mode)
+        function unlockVault() {
+            const vault = document.getElementById('builder');
+            // Toggle visibility
+            if(vault.classList.contains('hidden')) {
+                vault.classList.remove('hidden');
+                // Play a small sound effect logic could go here
+                
+                // Scroll to it
+                vault.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            } else {
+                vault.classList.add('hidden');
+            }
+        }
+
+        // FILTERS
+        function filterWriting(category) {
+            const items = document.querySelectorAll('.writing-item');
+            const buttons = document.querySelectorAll('.filter-btn');
+            const toggleBtn = document.getElementById('writing-toggle-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+                if(btn.innerText.toLowerCase().includes(category) || (category === 'all' && btn.innerText === 'ALL')) btn.classList.add('active');
+            });
+            if (category === 'all') {
+                items.forEach(item => item.classList.contains('writing-extra') ? item.classList.add('hidden') : item.classList.remove('hidden'));
+                toggleBtn.style.display = 'inline-block';
+                toggleBtn.innerText = 'Show All Writing 👇';
+            } else {
+                items.forEach(item => item.classList.contains(category) ? item.classList.remove('hidden') : item.classList.add('hidden'));
+                toggleBtn.style.display = 'none';
+            }
+        }
+
+        function filterVideo(category) {
+            const items = document.querySelectorAll('.video-card');
+            const buttons = document.querySelectorAll('.video-filter-btn');
+            const toggleBtn = document.getElementById('video-toggle-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+                if(btn.innerText.includes(category) || (category === 'all' && btn.innerText === 'ALL')) btn.classList.add('active');
+            });
+            if (category === 'all') {
+                items.forEach(item => item.classList.contains('video-extra') ? item.classList.add('hidden') : item.classList.remove('hidden'));
+                toggleBtn.style.display = 'inline-block';
+                toggleBtn.innerText = 'Show All Videos 👇';
+            } else {
+                items.forEach(item => item.classList.contains(category) ? item.classList.remove('hidden') : item.classList.add('hidden'));
+                toggleBtn.style.display = 'none';
+            }
+        }
+
+        // KONAMI CODE
+        const konamiCode = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'];
+        let konamiIndex = 0;
+        document.addEventListener('keydown', (e) => {
+            if (e.key === konamiCode[konamiIndex]) {
+                konamiIndex++;
+                if (konamiIndex === konamiCode.length) {
+                    document.getElementById('konami-modal').classList.remove('hidden');
+                    konamiIndex = 0;
+                }
+            } else {
+                konamiIndex = 0;
+            }
+        });
+
+        // YOUTUBE CLICK
+        document.addEventListener("DOMContentLoaded", function() {
+             document.querySelectorAll('.video-thumb').forEach(thumb => {
+                thumb.addEventListener('click', () => {
+                    const id = thumb.getAttribute('data-id');
+                    const iframe = document.createElement('iframe');
+                    iframe.src = `https://www.youtube.com/embed/${id}?autoplay=1`;
+                    iframe.setAttribute('frameborder', '0');
+                    iframe.setAttribute('allowfullscreen', '');
+                    iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+                    iframe.className = 'w-full h-full';
+                    thumb.innerHTML = '';
+                    thumb.appendChild(iframe);
+                });
+             });
+        });
+    </script>
+
+</body>
+</html>
