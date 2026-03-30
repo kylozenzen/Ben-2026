@@ -1,0 +1,60 @@
+{
+  "sectionTitle": "Builder Mode",
+  "sectionSubtitle": "When I'm not strategizing content, I'm shipping apps. Solo builds from 0 to live.",
+  "skills": {
+    "stack": "Vanilla JS · HTML/CSS · Tailwind · React · Supabase · Netlify · Vite · PWA",
+    "tools": "Claude (AI-assisted dev) · GitHub · Netlify Functions · Upstash Redis · Unsplash API · Buffer GraphQL API"
+  },
+  "categories": [
+    { "id": "all", "label": "All" },
+    { "id": "tool", "label": "Tools" },
+    { "id": "app", "label": "Apps" },
+    { "id": "game", "label": "Games" }
+  ],
+  "projects": [
+    {
+      "id": "postiq",
+      "category": "tool",
+      "title": "PostIQ",
+      "tagline": "Buffer companion PWA with post composer, content calendar, thread splitter & approvals workflow.",
+      "tags": ["PWA", "Buffer API", "GraphQL", "Netlify"],
+      "emoji": "📬",
+      "accentColor": "amber",
+      "url": "https://ccpostiq.netlify.app",
+      "featured": true
+    },
+    {
+      "id": "plot-twisted",
+      "category": "game",
+      "title": "Plot Twisted",
+      "tagline": "Movie trivia where the plot is the puzzle. Daily Challenge, Pass & Play, and voice recognition.",
+      "tags": ["Game", "Trivia", "Multiplayer", "Nobody Studios"],
+      "emoji": "🍿",
+      "accentColor": "red",
+      "url": "https://plottwisted.netlify.app/",
+      "featured": true
+    },
+    {
+      "id": "steady",
+      "category": "app",
+      "title": "Steady",
+      "tagline": "Nutrition tracking PWA with 8-step onboarding, custom numeric keypad & serving multiplier.",
+      "tags": ["PWA", "Nutrition", "Onboarding", "Nobody Studios"],
+      "emoji": "🥗",
+      "accentColor": "lime",
+      "url": "#",
+      "featured": true
+    },
+    {
+      "id": "planet-strength",
+      "category": "app",
+      "title": "Planet Strength",
+      "tagline": "Fitness PWA built for Planet Fitness members. 110+ exercises with smart progressive overload.",
+      "tags": ["PWA", "Fitness", "Nobody Studios"],
+      "emoji": "💪",
+      "accentColor": "fuchsia",
+      "url": "#",
+      "featured": true
+    }
+  ]
+}
