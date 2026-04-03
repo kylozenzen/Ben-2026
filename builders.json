@@ -57,14 +57,14 @@
       "featured": true
     },
       {
-      "id": "planet-strength",
+      "id": "receipts-demo",
       "category": "app",
-      "title": "Planet Strength",
-      "tagline": "Fitness PWA built for Planet Fitness members. 110+ exercises with smart progressive overload.",
-      "tags": ["PWA", "Fitness", "Nobody Studios"],
-      "emoji": "💪",
-      "accentColor": "fuchsia",
-      "url": "#",
+      "title": "Receipts",
+      "tagline": "Freelance creator tool that streamlines approvals with a no log in link for the client, plus deal tracking.",
+      "tags": ["PWA", "Creator", "Nobody Studios"],
+      "emoji": "✏️",
+      "accentColor": "amber",
+      "url": "https://receiptsdemo.netlify.app",
       "featured": false
     }
   ]
