@@ -55,6 +55,17 @@
       "accentColor": "fuchsia",
       "url": "#",
       "featured": true
+    },
+      {
+      "id": "planet-strength",
+      "category": "app",
+      "title": "Planet Strength",
+      "tagline": "Fitness PWA built for Planet Fitness members. 110+ exercises with smart progressive overload.",
+      "tags": ["PWA", "Fitness", "Nobody Studios"],
+      "emoji": "💪",
+      "accentColor": "fuchsia",
+      "url": "#",
+      "featured": false
     }
   ]
 }
