@@ -10,6 +10,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700;900&display=swap" rel="stylesheet">
   <style>
+    html { scroll-behavior: smooth; }
+
     body {
       font-family: 'Space Grotesk', sans-serif;
       background-color: #fff9f9;
@@ -45,6 +47,115 @@
       background-color: #000;
       background-image: repeating-linear-gradient(45deg, #000, #000 10px, #111 10px, #111 20px);
     }
+
+    @media (max-width: 767px) {
+      body { overflow-x: hidden; }
+      .bg-grid { background-size: 16px 16px; }
+
+      .hard-shadow,
+      .hard-shadow-fuchsia,
+      .hard-shadow-lime,
+      .hard-shadow-cyan,
+      .hard-shadow-yellow {
+        box-shadow: 3px 3px 0px #000;
+      }
+
+      .hard-shadow:hover {
+        box-shadow: 3px 3px 0px #000;
+        transform: none;
+      }
+
+      .btn-push:hover,
+      .btn-push:active {
+        transform: none;
+        box-shadow: 3px 3px 0px #000;
+      }
+
+      .hazard-stripes span {
+        font-size: 0.85rem !important;
+        line-height: 1.3;
+        display: inline-block;
+        padding: 0.25rem 0.5rem;
+      }
+
+      header .max-w-7xl {
+        padding-top: 1rem !important;
+        padding-bottom: 1rem !important;
+      }
+
+      header .flex.items-center.justify-between {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 0.75rem !important;
+      }
+
+      header .flex.items-center.gap-3 {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+      }
+
+      header .flex.items-center.gap-3 > * {
+        width: 100% !important;
+        text-align: center !important;
+        justify-content: center !important;
+      }
+
+      .md\:text-7xl { font-size: 2.95rem !important; line-height: 0.94 !important; }
+      .md\:text-2xl { font-size: 1.2rem !important; }
+      .md\:grid-cols-\[1\.4fr_\.9fr\] { grid-template-columns: 1fr !important; }
+      .md\:grid-cols-\[0\.85fr_1\.15fr\] { grid-template-columns: 1fr !important; }
+      .md\:grid-cols-\[1fr_\.95fr\] { grid-template-columns: 1fr !important; }
+      .md\:gap-12, .md\:gap-14 { gap: 1.25rem !important; }
+      .md\:py-20 { padding-top: 3.5rem !important; padding-bottom: 3.5rem !important; }
+      .md\:px-8 { padding-left: 1rem !important; padding-right: 1rem !important; }
+
+      aside.bg-white.border-4.border-black { margin-top: 0.5rem; }
+      aside .grid.grid-cols-2 { gap: 0.65rem !important; }
+      aside .grid.grid-cols-2 > div { padding: 0.75rem 0.5rem !important; }
+      aside .text-2xl, aside .md\:text-3xl { font-size: 1.4rem !important; line-height: 1 !important; }
+
+      .md\:text-5xl { font-size: 2.2rem !important; line-height: 0.96 !important; }
+      .md\:text-6xl { font-size: 2.45rem !important; line-height: 0.95 !important; }
+      .text-lg, .md\:text-xl { font-size: 1rem !important; line-height: 1.6 !important; }
+      .text-2xl, .md\:text-3xl { font-size: 1.4rem !important; line-height: 1.12 !important; }
+      .grid.md\:grid-cols-3 { grid-template-columns: 1fr !important; }
+      .grid.md\:grid-cols-2, .grid.lg\:grid-cols-3 { grid-template-columns: 1fr !important; }
+      .space-y-6 > * + * { margin-top: 1rem !important; }
+
+      .p-6 { padding: 1.1rem !important; }
+      .md\:p-8 { padding: 1.25rem !important; }
+      .p-5 { padding: 1rem !important; }
+
+      .flex.flex-wrap.justify-center.gap-4 {
+        flex-direction: column !important;
+        align-items: stretch !important;
+      }
+
+      .flex.flex-wrap.justify-center.gap-4 > * {
+        width: 100% !important;
+        justify-content: center !important;
+        text-align: center !important;
+      }
+
+      #case-study-contact .max-w-2xl { max-width: 100% !important; }
+      #case-study-contact form { padding: 1.25rem !important; }
+      #case-study-contact h2 { font-size: 2.3rem !important; line-height: 0.95 !important; }
+      #case-study-contact .text-lg.md\:text-2xl { font-size: 1rem !important; line-height: 1.5 !important; }
+      #case-study-contact .grid.grid-cols-1.md\:grid-cols-2 { grid-template-columns: 1fr !important; }
+      #case-study-contact button[type="submit"] {
+        font-size: 1rem !important;
+        line-height: 1.2 !important;
+        padding: 1rem !important;
+      }
+
+      footer .flex.flex-col.md\:flex-row {
+        align-items: center !important;
+        text-align: center !important;
+      }
+
+      footer .flex.gap-3 { justify-content: center !important; }
+    }
   </style>
 </head>
 <body class="selection:bg-fuchsia-500 selection:text-white">
@@ -54,8 +165,8 @@
     <div class="relative max-w-7xl mx-auto px-4 py-5 md:px-8 flex items-center justify-between gap-4">
       <a href="/index.html" class="text-xl md:text-2xl font-black tracking-tighter uppercase border-2 border-black bg-white px-3 py-2 hard-shadow">BEN CAMPBELL.</a>
       <div class="flex items-center gap-3">
-        <a href="/index.html#social" class="px-4 py-2 font-bold uppercase bg-white border-2 border-black hard-shadow btn-push text-sm md:text-base">Back to Work</a>
-        <a href="/index.html#contact" class="px-4 py-2 font-bold uppercase bg-black text-white border-2 border-black hard-shadow btn-push text-sm md:text-base">Contact</a>
+        <a href="/index.html" class="px-4 py-2 font-bold uppercase bg-white border-2 border-black hard-shadow btn-push text-sm md:text-base">Back to Work</a>
+        <a href="#case-study-contact" class="px-4 py-2 font-bold uppercase bg-black text-white border-2 border-black hard-shadow btn-push text-sm md:text-base">Reach Out Below ↓</a>
       </div>
     </div>
   </header>
@@ -224,58 +335,52 @@
     <section class="bg-fuchsia-500 text-white px-4 py-14 md:px-8 md:py-20 border-b-4 border-black">
       <div class="max-w-5xl mx-auto text-center">
         <p class="text-sm md:text-base font-black uppercase tracking-widest mb-3">Next up</p>
-        <h2 class="text-3xl md:text-6xl font-black uppercase mb-5">Want the acquisition story too?</h2>
-        <p class="text-lg md:text-2xl font-bold max-w-3xl mx-auto mb-8">Check out how I used content and social strategy to support customer acquisition and B2B growth at Codeup.</p>
-        <div class="flex flex-wrap justify-center gap-4">
-         <span class="px-8 py-4 text-lg font-black uppercase bg-gray-200 text-gray-600 border-2 border-black hard-shadow cursor-not-allowed inline-flex items-center justify-center">
-  Codeup Case Study Coming Soon
-</span>
-          
-          <a href="/index.html#contact" class="px-8 py-4 text-lg font-black uppercase bg-white text-black border-2 border-black hard-shadow btn-push">Let’s Chat</a>
+        <h2 class="text-3xl md:text-6xl font-black uppercase mb-5">More case studies are on the way</h2>
+        <p class="text-lg md:text-2xl font-bold max-w-3xl mx-auto mb-8">Codeup is coming soon. For now, the best next move is to reach out below if you want to talk through my work.</p>
+        <div class="flex justify-center">
+          <span class="px-8 py-4 text-lg font-black uppercase bg-gray-200 text-gray-700 border-2 border-black hard-shadow inline-flex items-center justify-center">Codeup Case Study Coming Soon</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="case-study-contact" class="bg-lime-300 p-8 pt-16 border-t-4 border-black">
+      <div class="max-w-5xl mx-auto text-center">
+        <h2 class="text-4xl md:text-6xl font-black uppercase mb-5 leading-none">Like how I think?</h2>
+        <p class="text-lg md:text-2xl font-bold bg-white inline-block max-w-3xl px-6 py-4 border-2 border-black hard-shadow-fuchsia mb-8 -rotate-1 leading-snug">
+          I build strategy, systems, and creative that help brands show up with more clarity, consistency, and impact.
+        </p>
+
+        <div class="max-w-2xl mx-auto">
+          <form name="portfolio-contact" method="POST" action="/success" data-netlify="true" netlify-honeypot="bot-field" class="contact-form bg-white border-4 border-black hard-shadow p-6 md:p-8 text-left">
+            <input type="hidden" name="form-name" value="portfolio-contact" />
+            <p class="hidden">
+              <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+              <div>
+                <label for="name" class="block mb-2 font-black uppercase text-sm">Name</label>
+                <input type="text" id="name" name="name" required class="w-full px-4 py-3 border-2 border-black rounded-none bg-white focus:outline-none focus:ring-0 focus:border-fuchsia-500" placeholder="Your Name" />
+              </div>
+              <div>
+                <label for="email" class="block mb-2 font-black uppercase text-sm">Email</label>
+                <input type="email" id="email" name="email" required class="w-full px-4 py-3 border-2 border-black rounded-none bg-white focus:outline-none focus:ring-0 focus:border-fuchsia-500" placeholder="your@email.com" />
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <label for="message" class="block mb-2 font-black uppercase text-sm">What are you hiring for?</label>
+              <textarea id="message" name="message" rows="5" required class="w-full px-4 py-3 border-2 border-black rounded-none bg-white resize-y focus:outline-none focus:ring-0 focus:border-fuchsia-500" placeholder="Tell me about the role, project, or creative problem you need help solving."></textarea>
+            </div>
+
+            <button type="submit" class="w-full px-6 py-4 text-lg md:text-2xl font-black text-white bg-black border-4 border-black hard-shadow hover:bg-fuchsia-500 transition-colors btn-push uppercase">
+              Reach Out
+            </button>
+          </form>
         </div>
       </div>
     </section>
   </main>
-
-  <section class="bg-lime-300 p-8 pt-16 border-t-4 border-black">
-  <div class="max-w-5xl mx-auto text-center">
-    <h2 class="text-4xl md:text-6xl font-black uppercase mb-5 leading-none">
-      Like how I think?
-    </h2>
-    <p class="text-lg md:text-2xl font-bold bg-white inline-block max-w-3xl px-6 py-4 border-2 border-black hard-shadow-fuchsia mb-8 -rotate-1 leading-snug">
-      I build strategy, systems, and creative that help brands show up with more clarity, consistency, and impact.
-    </p>
-
-    <div class="max-w-2xl mx-auto">
-      <form name="portfolio-contact" method="POST" action="/success" data-netlify="true" netlify-honeypot="bot-field" class="contact-form bg-white border-4 border-black hard-shadow p-6 md:p-8 text-left">
-        <input type="hidden" name="form-name" value="portfolio-contact" />
-        <p class="hidden">
-          <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
-        </p>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-          <div>
-            <label for="name" class="block mb-2 font-black uppercase text-sm">Name</label>
-            <input type="text" id="name" name="name" required class="w-full px-4 py-3 border-2 border-black rounded-none bg-white focus:outline-none focus:ring-0 focus:border-fuchsia-500" placeholder="Your Name" />
-          </div>
-          <div>
-            <label for="email" class="block mb-2 font-black uppercase text-sm">Email</label>
-            <input type="email" id="email" name="email" required class="w-full px-4 py-3 border-2 border-black rounded-none bg-white focus:outline-none focus:ring-0 focus:border-fuchsia-500" placeholder="your@email.com" />
-          </div>
-        </div>
-
-        <div class="mb-4">
-          <label for="message" class="block mb-2 font-black uppercase text-sm">What are you hiring for?</label>
-          <textarea id="message" name="message" rows="5" required class="w-full px-4 py-3 border-2 border-black rounded-none bg-white resize-y focus:outline-none focus:ring-0 focus:border-fuchsia-500" placeholder="Tell me about the role, project, or creative problem you need help solving."></textarea>
-        </div>
-
-        <button type="submit" class="w-full px-6 py-4 text-lg md:text-2xl font-black text-white bg-black border-4 border-black hard-shadow hover:bg-fuchsia-500 transition-colors btn-push uppercase">
-          Let’s Chat
-        </button>
-      </form>
-    </div>
-  </div>
-</section>
 
   <footer class="bg-lime-300 p-8 border-t-2 border-black">
     <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
@@ -287,5 +392,6 @@
       </div>
     </div>
   </footer>
+
 </body>
 </html>
