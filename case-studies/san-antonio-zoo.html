@@ -227,12 +227,55 @@
         <h2 class="text-3xl md:text-6xl font-black uppercase mb-5">Want the acquisition story too?</h2>
         <p class="text-lg md:text-2xl font-bold max-w-3xl mx-auto mb-8">Check out how I used content and social strategy to support customer acquisition and B2B growth at Codeup.</p>
         <div class="flex flex-wrap justify-center gap-4">
-          <a href="/case-studies/codeup.html" class="px-8 py-4 text-lg font-black uppercase bg-black text-white border-2 border-black hard-shadow btn-push">View Codeup Case Study</a>
+         <span class="px-8 py-4 text-lg font-black uppercase bg-gray-200 text-gray-600 border-2 border-black hard-shadow cursor-not-allowed inline-flex items-center justify-center">
+  Codeup Case Study Coming Soon
+</span>
+          
           <a href="/index.html#contact" class="px-8 py-4 text-lg font-black uppercase bg-white text-black border-2 border-black hard-shadow btn-push">Let’s Chat</a>
         </div>
       </div>
     </section>
   </main>
+
+  <section class="bg-lime-300 p-8 pt-16 border-t-4 border-black">
+  <div class="max-w-5xl mx-auto text-center">
+    <h2 class="text-4xl md:text-6xl font-black uppercase mb-5 leading-none">
+      Like how I think?
+    </h2>
+    <p class="text-lg md:text-2xl font-bold bg-white inline-block max-w-3xl px-6 py-4 border-2 border-black hard-shadow-fuchsia mb-8 -rotate-1 leading-snug">
+      I build strategy, systems, and creative that help brands show up with more clarity, consistency, and impact.
+    </p>
+
+    <div class="max-w-2xl mx-auto">
+      <form name="portfolio-contact" method="POST" action="/success" data-netlify="true" netlify-honeypot="bot-field" class="contact-form bg-white border-4 border-black hard-shadow p-6 md:p-8 text-left">
+        <input type="hidden" name="form-name" value="portfolio-contact" />
+        <p class="hidden">
+          <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+          <div>
+            <label for="name" class="block mb-2 font-black uppercase text-sm">Name</label>
+            <input type="text" id="name" name="name" required class="w-full px-4 py-3 border-2 border-black rounded-none bg-white focus:outline-none focus:ring-0 focus:border-fuchsia-500" placeholder="Your Name" />
+          </div>
+          <div>
+            <label for="email" class="block mb-2 font-black uppercase text-sm">Email</label>
+            <input type="email" id="email" name="email" required class="w-full px-4 py-3 border-2 border-black rounded-none bg-white focus:outline-none focus:ring-0 focus:border-fuchsia-500" placeholder="your@email.com" />
+          </div>
+        </div>
+
+        <div class="mb-4">
+          <label for="message" class="block mb-2 font-black uppercase text-sm">What are you hiring for?</label>
+          <textarea id="message" name="message" rows="5" required class="w-full px-4 py-3 border-2 border-black rounded-none bg-white resize-y focus:outline-none focus:ring-0 focus:border-fuchsia-500" placeholder="Tell me about the role, project, or creative problem you need help solving."></textarea>
+        </div>
+
+        <button type="submit" class="w-full px-6 py-4 text-lg md:text-2xl font-black text-white bg-black border-4 border-black hard-shadow hover:bg-fuchsia-500 transition-colors btn-push uppercase">
+          Let’s Chat
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
 
   <footer class="bg-lime-300 p-8 border-t-2 border-black">
     <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
