@@ -1,889 +1,516 @@
 <!DOCTYPE html>
-<html lang="en" style="scroll-behavior: smooth;">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ben Campbell | Creative Portfolio</title>
-    
-    <!-- SEO & LINK PREVIEWS -->
-    <meta name="description" content="Creative strategist building viral content & digital chaos. 6M+ followers grown. #GirlDad & Builder.">
-    <meta name="author" content="Ben Campbell">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>San Antonio Zoo Case Study | Ben Campbell</title>
+  <meta name="description" content="How Ben Campbell helped build a more strategic social storytelling engine for the San Antonio Zoo." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700;900&display=swap" rel="stylesheet">
+  <style>
+    html { scroll-behavior: smooth; }
 
-    <!-- Open Graph / Facebook / LinkedIn -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://bencampbell.com/"> 
-    <meta property="og:title" content="Ben Campbell | Creative Portfolio">
-    <meta property="og:description" content="Strategies that stop the scroll. 6M+ followers grown across SaaS, EdTech, & Zoos. Creator of Plot Twisted & Signal.">
-    <meta property="og:image" content="https://raw.githubusercontent.com/kylozenzen/ben-portfolio/main/Portfolio%20Share%20Banner.png">
+    body {
+      font-family: 'Space Grotesk', sans-serif;
+      background-color: #fff9f9;
+      color: #000;
+      overflow-x: hidden;
+    }
 
-    <!-- Twitter / X -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://bencampbell.com/"> 
-    <meta name="twitter:title" content="Ben Campbell | Creative Portfolio">
-    <meta name="twitter:description" content="Strategies that stop the scroll. 6M+ followers grown. Creator of Plot Twisted.">
-    <meta name="twitter:image" content="https://raw.githubusercontent.com/kylozenzen/ben-portfolio/main/Portfolio%20Share%20Banner.png">
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700;900&display=swap" rel="stylesheet">
-    
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
-    <style>
-        body {
-            font-family: 'Space Grotesk', sans-serif;
-            background-color: #fff9f9; 
-            color: #000;
-            overflow-x: hidden; 
-            transition: filter 0.3s ease;
-        }
+    .hard-shadow {
+      box-shadow: 4px 4px 0px #000;
+      transition: all 0.2s ease-out;
+    }
+    .hard-shadow:hover {
+      box-shadow: 6px 6px 0px #000;
+      transform: translate(-1px, -1px);
+    }
 
-        body.chaos-active { filter: invert(1) hue-rotate(180deg); }
-        body.chaos-active img { filter: invert(1) hue-rotate(180deg); }
+    .hard-shadow-fuchsia { box-shadow: 6px 6px 0px #d946ef; }
+    .hard-shadow-lime { box-shadow: 6px 6px 0px #bef264; }
+    .hard-shadow-cyan { box-shadow: 6px 6px 0px #67e8f9; }
+    .hard-shadow-yellow { box-shadow: 6px 6px 0px #facc15; }
 
-        .hard-shadow {
-            box-shadow: 4px 4px 0px #000;
-            transition: all 0.2s ease-out;
-        }
-        .hard-shadow:hover {
-            box-shadow: 6px 6px 0px #000;
-            transform: translate(-1px, -1px);
-        }
-        
-        .hard-shadow-fuchsia { box-shadow: 6px 6px 0px #d946ef; }
-        .hard-shadow-lime { box-shadow: 6px 6px 0px #bef264; }
-        .hard-shadow-cyan { box-shadow: 6px 6px 0px #67e8f9; }
-        .hard-shadow-red { box-shadow: 6px 6px 0px #ef4444; }
-        .hard-shadow-yellow { box-shadow: 6px 6px 0px #facc15; }
+    .btn-push:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0px #000; }
+    .btn-push:active { transform: translate(4px, 4px); box-shadow: 0px 0px 0px #000; }
 
-        .btn-push:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0px #000; }
-        .btn-push:active { transform: translate(4px, 4px); box-shadow: 0px 0px 0px #000; }
+    .bg-grid {
+      background-image: linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px);
+      background-size: 20px 20px;
+      background-color: #fff9f9;
+      opacity: 0.1;
+    }
 
-        .bg-grid {
-            background-image: linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px);
-            background-size: 20px 20px;
-            background-color: #fff9f9;
-            opacity: 0.1;
-        }
+    .hazard-stripes {
+      background-color: #000;
+      background-image: repeating-linear-gradient(45deg, #000, #000 10px, #111 10px, #111 20px);
+    }
 
-        .easter-egg-box { border: 3px solid #000; box-shadow: 4px 4px 0 #000; }
-        
-        .filter-btn.active, .video-filter-btn.active {
-            background-color: #000;
-            color: #fff;
-            transform: translate(2px, 2px);
-            box-shadow: 2px 2px 0px #d946ef;
-        }
+    .story-image {
+      background: #fff;
+      border: 2px solid #000;
+      overflow: hidden;
+    }
 
-        .builder-filter-btn.active {
-            background-color: #fff;
-            color: #000;
-            transform: translate(2px, 2px);
-            box-shadow: 2px 2px 0px #facc15;
-        }
+    .story-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
 
-        .play-overlay { background: rgba(0,0,0,0.4); transition: all 0.3s; }
-        .video-card:hover .play-overlay { background: rgba(0,0,0,0.1); }
-        .play-icon { transition: transform 0.3s; }
-        .video-card:hover .play-icon { transform: scale(1.1); }
+    .story-caption {
+      border-top: 2px solid #000;
+      padding: 0.85rem 1rem;
+      font-size: 0.82rem;
+      line-height: 1.45;
+      background: #fff;
+    }
 
-        .hazard-stripes {
-            background-color: #000;
-            background-image: repeating-linear-gradient(45deg, #000, #000 10px, #111 10px, #111 20px);
-        }
+    .asset-label {
+      font-weight: 900;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 0.2rem;
+    }
 
-        .glitch-wrapper { position: relative; display: inline-block; }
-        .glitch { position: relative; }
-        .glitch::before, .glitch::after {
-            content: attr(data-text);
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: #fff9f9;
-        }
-        .glitch::before {
-            left: 2px;
-            text-shadow: -1px 0 #ff00c1;
-            clip: rect(0, 0, 0, 0);
-            animation: glitch-anim-1 4s infinite linear alternate-reverse;
-        }
-        .glitch::after {
-            left: -2px;
-            text-shadow: -1px 0 #00fff9;
-            clip: rect(0, 0, 0, 0);
-            animation: glitch-anim-2 4s infinite linear alternate-reverse;
-        }
+    @media (max-width: 767px) {
+      body { overflow-x: hidden; }
+      .bg-grid { background-size: 16px 16px; }
 
-        @keyframes glitch-anim-1 {
-            0%, 90% { clip: rect(0, 0, 0, 0); }
-            91% { clip: rect(30px, 9999px, 10px, 0); }
-            94% { clip: rect(10px, 9999px, 80px, 0); }
-            97% { clip: rect(50px, 9999px, 90px, 0); }
-            100% { clip: rect(20px, 9999px, 60px, 0); }
-        }
-        @keyframes glitch-anim-2 {
-            0%, 90% { clip: rect(0, 0, 0, 0); }
-            91% { clip: rect(10px, 9999px, 90px, 0); }
-            94% { clip: rect(20px, 9999px, 70px, 0); }
-            97% { clip: rect(80px, 9999px, 10px, 0); }
-            100% { clip: rect(60px, 9999px, 10px, 0); }
-        }
+      .hard-shadow,
+      .hard-shadow-fuchsia,
+      .hard-shadow-lime,
+      .hard-shadow-cyan,
+      .hard-shadow-yellow {
+        box-shadow: 3px 3px 0px #000;
+      }
 
-        .skeleton {
-            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-            background-size: 200% 100%;
-            animation: skeleton-loading 1.5s infinite;
-        }
-        @keyframes skeleton-loading {
-            0% { background-position: 200% 0; }
-            100% { background-position: -200% 0; }
-        }
+      .hard-shadow:hover {
+        box-shadow: 3px 3px 0px #000;
+        transform: none;
+      }
 
-        .builder-card {
-            transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
-        }
-        .builder-card:hover {
-            transform: translate(-2px, -2px);
-        }
-    </style>
+      .btn-push:hover,
+      .btn-push:active {
+        transform: none;
+        box-shadow: 3px 3px 0px #000;
+      }
+
+      .hazard-stripes span {
+        font-size: 0.85rem !important;
+        line-height: 1.3;
+        display: inline-block;
+        padding: 0.25rem 0.5rem;
+      }
+
+      header .max-w-7xl {
+        padding-top: 1rem !important;
+        padding-bottom: 1rem !important;
+      }
+
+      header .flex.items-center.justify-between {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 0.75rem !important;
+      }
+
+      header .flex.items-center.gap-3 {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+      }
+
+      header .flex.items-center.gap-3 > * {
+        width: 100% !important;
+        text-align: center !important;
+        justify-content: center !important;
+      }
+
+      .md\:text-7xl { font-size: 2.95rem !important; line-height: 0.94 !important; }
+      .md\:text-2xl { font-size: 1.2rem !important; }
+      .md\:grid-cols-\[1\.4fr_\.9fr\] { grid-template-columns: 1fr !important; }
+      .md\:grid-cols-\[0\.85fr_1\.15fr\] { grid-template-columns: 1fr !important; }
+      .md\:grid-cols-\[1fr_\.95fr\] { grid-template-columns: 1fr !important; }
+      .md\:grid-cols-\[1\.1fr_\.9fr\] { grid-template-columns: 1fr !important; }
+      .md\:gap-12, .md\:gap-14 { gap: 1.25rem !important; }
+      .md\:py-20 { padding-top: 3.5rem !important; padding-bottom: 3.5rem !important; }
+      .md\:px-8 { padding-left: 1rem !important; padding-right: 1rem !important; }
+
+      aside.bg-white.border-4.border-black { margin-top: 0.5rem; }
+      aside .grid.grid-cols-2 { gap: 0.65rem !important; }
+      aside .grid.grid-cols-2 > div { padding: 0.75rem 0.5rem !important; }
+      aside .text-2xl, aside .md\:text-3xl { font-size: 1.4rem !important; line-height: 1 !important; }
+
+      .md\:text-5xl { font-size: 2.2rem !important; line-height: 0.96 !important; }
+      .md\:text-6xl { font-size: 2.45rem !important; line-height: 0.95 !important; }
+      .text-lg, .md\:text-xl { font-size: 1rem !important; line-height: 1.6 !important; }
+      .text-2xl, .md\:text-3xl { font-size: 1.4rem !important; line-height: 1.12 !important; }
+      .grid.md\:grid-cols-3 { grid-template-columns: 1fr !important; }
+      .grid.md\:grid-cols-2, .grid.lg\:grid-cols-3 { grid-template-columns: 1fr !important; }
+      .space-y-6 > * + * { margin-top: 1rem !important; }
+
+      .p-6 { padding: 1.1rem !important; }
+      .md\:p-8 { padding: 1.25rem !important; }
+      .p-5 { padding: 1rem !important; }
+
+      .flex.flex-wrap.justify-center.gap-4 {
+        flex-direction: column !important;
+        align-items: stretch !important;
+      }
+
+      .flex.flex-wrap.justify-center.gap-4 > * {
+        width: 100% !important;
+        justify-content: center !important;
+        text-align: center !important;
+      }
+
+      #case-study-contact .max-w-2xl { max-width: 100% !important; }
+      #case-study-contact form { padding: 1.25rem !important; }
+      #case-study-contact h2 { font-size: 2.3rem !important; line-height: 0.95 !important; }
+      #case-study-contact .text-lg.md\:text-2xl { font-size: 1rem !important; line-height: 1.5 !important; }
+      #case-study-contact .grid.grid-cols-1.md\:grid-cols-2 { grid-template-columns: 1fr !important; }
+      #case-study-contact button[type="submit"] {
+        font-size: 1rem !important;
+        line-height: 1.2 !important;
+        padding: 1rem !important;
+      }
+
+      footer .flex.flex-col.md\:flex-row {
+        align-items: center !important;
+        text-align: center !important;
+      }
+
+      footer .flex.gap-3 { justify-content: center !important; }
+    }
+  </style>
 </head>
-
 <body class="selection:bg-fuchsia-500 selection:text-white">
 
-    <!-- HERO SECTION -->
-    <main class="relative z-10 w-full min-h-[90vh] p-4 flex flex-col border-b-4 border-black md:p-8" data-aos="fade-in">
-        <div class="absolute inset-0 z-0 bg-grid"></div>
+  <header class="relative border-b-4 border-black overflow-hidden">
+    <div class="absolute inset-0 bg-grid"></div>
+    <div class="relative max-w-7xl mx-auto px-4 py-5 md:px-8 flex items-center justify-between gap-4">
+      <a href="../index.html" class="text-xl md:text-2xl font-black tracking-tighter uppercase border-2 border-black bg-white px-3 py-2 hard-shadow">BEN CAMPBELL.</a>
+      <div class="flex items-center gap-3">
+        <a href="../index.html" class="px-4 py-2 font-bold uppercase bg-white border-2 border-black hard-shadow btn-push text-sm md:text-base">Back to Work</a>
+        <a href="#case-study-contact" class="px-4 py-2 font-bold uppercase bg-black text-white border-2 border-black hard-shadow btn-push text-sm md:text-base">Reach Out Below ↓</a>
+      </div>
+    </div>
+  </header>
 
-        <!-- Desktop Navigation -->
-        <nav class="relative z-20 hidden md:flex flex-wrap justify-between items-center w-full mb-16">
-            <div class="text-2xl font-black tracking-tighter uppercase border-2 border-black bg-white px-2 py-1">BEN CAMPBELL.</div>
-            <div class="flex gap-6 font-bold uppercase">
-                <button onclick="scrollToSection('social')" class="hover:bg-yellow-300 px-2 border-2 border-transparent hover:border-black transition-all">Home</button>
-                <button onclick="scrollToSection('social')" class="hover:bg-fuchsia-400 px-2 border-2 border-transparent hover:border-black transition-all">Social</button>
-                <button onclick="scrollToSection('writing')" class="hover:bg-cyan-300 px-2 border-2 border-transparent hover:border-black transition-all">Writing</button>
-                <button onclick="scrollToSection('video')" class="hover:bg-lime-300 px-2 border-2 border-transparent hover:border-black transition-all">Video</button>
-                <button onclick="scrollToSection('builder')" class="hover:bg-yellow-300 px-2 border-2 border-transparent hover:border-black transition-all">Builder</button>
-            </div>
-            <a href="#contact" class="px-6 py-2 font-bold text-white bg-black border-2 border-black hover:bg-fuchsia-500 transition-colors">CONTACT</a>
-        </nav>
-
-        <!-- Mobile Title -->
-        <div class="md:hidden w-full flex justify-between items-center mb-8 relative z-20">
-             <div class="text-xl font-black tracking-tighter uppercase border-2 border-black bg-white px-2 py-1">BEN CAMPBELL.</div>
-        </div>
-
-        <div class="relative z-10 flex flex-col justify-center flex-grow max-w-6xl mx-auto w-full">
-            <div class="flex flex-col md:flex-row items-center md:items-end justify-center md:justify-center gap-8 md:gap-12">
-                <div class="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-black hard-shadow-lime bg-gray-200 flex-shrink-0" data-aos="fade-right">
-                    <img src="https://raw.githubusercontent.com/kylozenzen/ben-portfolio/main/Ben%20Headshot%202026.jpg" alt="Ben Campbell" class="w-full h-full object-cover">
-                </div>
-                <div class="text-center md:text-right" data-aos="fade-left">
-                    <h1 class="text-6xl font-black uppercase md:text-[7rem] leading-[0.9] tracking-tight mb-2">
-                        HI, I'M <br>
-                        <div class="glitch-wrapper">
-                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-500 to-purple-600 glitch" data-text="BEN" style="-webkit-text-stroke: 2px black;">BEN</span>
-                        </div>
-                    </h1>
-                </div>
-            </div>
-
-            <!-- MOBILE NAV TABS -->
-            <div class="flex flex-wrap justify-center gap-2 mt-8 md:hidden relative z-30">
-                <button onclick="scrollToSection('social')" class="bg-white border-2 border-black px-3 py-2 font-bold uppercase text-sm hard-shadow hover:bg-fuchsia-400 active:bg-fuchsia-400 transition-colors">Social</button>
-                <button onclick="scrollToSection('writing')" class="bg-white border-2 border-black px-3 py-2 font-bold uppercase text-sm hard-shadow hover:bg-cyan-300 active:bg-cyan-300 transition-colors">Writing</button>
-                <button onclick="scrollToSection('video')" class="bg-white border-2 border-black px-3 py-2 font-bold uppercase text-sm hard-shadow hover:bg-lime-300 active:bg-lime-300 transition-colors">Video</button>
-                <button onclick="scrollToSection('builder')" class="bg-white border-2 border-black px-3 py-2 font-bold uppercase text-sm hard-shadow hover:bg-yellow-300 active:bg-yellow-300 transition-colors">Builder</button>
-                <button onclick="scrollToSection('contact')" class="bg-black text-white border-2 border-black px-3 py-2 font-bold uppercase text-sm hard-shadow active:bg-gray-800 transition-colors">Contact</button>
-            </div>
-
-            <div class="w-full flex justify-center mt-6 md:mt-12">
-                <div class="max-w-4xl bg-white border-2 border-black p-6 md:p-8 hard-shadow-cyan text-center" data-aos="fade-up" data-aos-delay="200">
-                    <p class="text-base md:text-xl font-bold mb-6 leading-relaxed">
-                        I build content marketing systems and social strategies that actually get people to stop scrolling. Across SaaS, Education, Architecture, and the San Antonio Zoo, my work has grown audiences ranging from emerging brands to multi-million-follower communities—including leading the Zoo to over <span class="bg-yellow-200 px-1 border border-black">6 million followers</span> across channels.
-                    </p>
-                    <p class="text-base md:text-lg font-medium text-gray-700 mb-6 leading-relaxed">
-                        I'm also a <span class="text-fuchsia-600 font-black">#GirlDad</span> to a very opinionated 3-year-old (see the juice box counter below) and married to a zookeeper who works with gorillas—so if my communication skills seem unusually patient, it's because I'm never fully sure whether she's listening or operantly conditioning me.
-                    </p>
-                    <div class="text-sm md:text-base font-bold text-gray-500 border-t-2 border-dashed border-gray-300 pt-4 flex flex-col md:flex-row items-center justify-center gap-2">
-                        <span>Also shipping: <span class="text-black font-bold">PostIQ</span>, <span class="text-black font-bold">Plot Twisted</span>, & <span class="text-black font-bold">Steady</span>.</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Desktop Buttons -->
-            <div class="hidden md:flex flex-wrap justify-center gap-4 mt-8">
-                <button onclick="scrollToSection('social')" class="px-8 py-3 text-lg font-bold uppercase bg-fuchsia-500 border-2 border-black hard-shadow btn-push text-white">
-                    Explore Work
-                </button>
-                <a href="https://drive.google.com/file/d/1brTQvb5ZOdq3yUGhY0DbtB00QEz4GBaI/view?usp=sharing" target="_blank" class="px-8 py-3 text-lg font-bold uppercase bg-white border-2 border-black hard-shadow btn-push flex items-center gap-2">
-                    <span>📄</span> Download Resume
-                </a>
-            </div>
-            
-            <!-- Mobile Resume Button -->
-            <div class="flex md:hidden justify-center mt-6">
-                 <a href="https://drive.google.com/file/d/1brTQvb5ZOdq3yUGhY0DbtB00QEz4GBaI/view?usp=sharing" target="_blank" class="px-6 py-2 text-sm font-bold uppercase bg-white border-2 border-black hard-shadow btn-push flex items-center gap-2">
-                    <span>📄</span> Download Resume
-                </a>
-            </div>
-        </div>
-    </main>
-
-    <!-- HAZARD BANNER -->
-    <section class="w-full py-4 hazard-stripes border-b-4 border-black overflow-hidden">
-        <div class="text-center">
-            <span class="text-xl md:text-3xl font-black italic uppercase text-lime-400 tracking-widest bg-black px-2">
-                /// SOCIAL STRATEGY /// VIRAL CONTENT /// BRAND CHAOS ///
-            </span>
-        </div>
-    </section>
-
-    <!-- STATS SECTION -->
-    <section class="p-4 py-12 md:p-12 border-b-4 border-black bg-white">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-10" data-aos="fade-up">
-                <h2 class="text-3xl md:text-5xl font-black uppercase inline-block bg-yellow-300 px-4 py-2 border-2 border-black hard-shadow">
-                    Social By The Numbers
-                </h2>
-            </div>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div class="bg-fuchsia-200 border-2 border-black p-3 md:p-4 hard-shadow flex flex-col justify-center items-center text-center" data-aos="flip-up">
-                    <span class="text-2xl md:text-4xl font-black mb-1">6M+</span>
-                    <span class="text-xs md:text-sm font-bold uppercase border-t-2 border-black pt-1 w-full">Followers</span>
-                </div>
-                <div class="bg-lime-200 border-2 border-black p-3 md:p-4 hard-shadow flex flex-col justify-center items-center text-center" data-aos="flip-up" data-aos-delay="50">
-                    <span class="text-2xl md:text-4xl font-black mb-1">470M+</span>
-                    <span class="text-xs md:text-sm font-bold uppercase border-t-2 border-black pt-1 w-full">Impressions</span>
-                </div>
-                <div class="bg-cyan-200 border-2 border-black p-3 md:p-4 hard-shadow flex flex-col justify-center items-center text-center" data-aos="flip-up" data-aos-delay="100">
-                    <span class="text-2xl md:text-4xl font-black mb-1">15M+</span>
-                    <span class="text-xs md:text-sm font-bold uppercase border-t-2 border-black pt-1 w-full">Interactions</span>
-                </div>
-                <div class="bg-yellow-200 border-2 border-black p-3 md:p-4 hard-shadow flex flex-col justify-center items-center text-center" data-aos="flip-up" data-aos-delay="150">
-                    <span class="text-2xl md:text-4xl font-black mb-1">2M+</span>
-                    <span class="text-xs md:text-sm font-bold uppercase border-t-2 border-black pt-1 w-full">TikTok Fans</span>
-                </div>
-                <div class="bg-white border-2 border-black p-3 md:p-4 hard-shadow flex flex-col justify-center items-center text-center" data-aos="flip-up">
-                    <span class="text-2xl md:text-4xl font-black mb-1">$75k+</span>
-                    <span class="text-xs md:text-sm font-bold uppercase border-t-2 border-black pt-1 w-full">Ad Revenue</span>
-                </div>
-                <div class="bg-white border-2 border-black p-3 md:p-4 hard-shadow flex flex-col justify-center items-center text-center" data-aos="flip-up" data-aos-delay="50">
-                    <span class="text-2xl md:text-4xl font-black mb-1">12%</span>
-                    <span class="text-xs md:text-sm font-bold uppercase border-t-2 border-black pt-1 w-full">Blog Growth</span>
-                </div>
-                <div class="bg-white border-2 border-black p-3 md:p-4 hard-shadow flex flex-col justify-center items-center text-center" data-aos="flip-up" data-aos-delay="100">
-                    <span class="text-2xl md:text-4xl font-black mb-1">1M+</span>
-                    <span class="text-xs md:text-sm font-bold uppercase border-t-2 border-black pt-1 w-full">Zoo IG</span>
-                </div>
-                <div class="bg-orange-200 border-2 border-black p-3 md:p-4 hard-shadow flex flex-col justify-center items-center text-center cursor-pointer active:scale-95 transition-transform" onclick="addJuice()" data-aos="flip-up" data-aos-delay="150">
-                    <span id="juice-count-display" class="text-2xl md:text-4xl font-black mb-1">0</span>
-                    <span class="text-xs md:text-sm font-bold uppercase border-t-2 border-black pt-1 w-full">Juice Boxes 🧃</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SOCIAL SECTION -->
-    <section id="social" class="bg-yellow-300 border-b-4 border-black p-4 py-20 md:p-12 scroll-mt-20">
-        <div class="max-w-7xl mx-auto">
-            <h2 id="social-header" class="text-5xl md:text-6xl font-black uppercase mb-8 border-l-8 border-black pl-6" data-aos="zoom-in">
-                Social That Slaps
-            </h2>
-            <p class="mb-8 text-xl max-w-2xl">Latest & Greatest from the Feed</p>
-            <div id="social-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="skeleton h-[500px] border-2 border-black"></div>
-                <div class="skeleton h-[500px] border-2 border-black"></div>
-            </div>
-            <div class="text-center mt-12">
-                <button onclick="toggleSocial()" id="social-toggle-btn" class="px-8 py-4 text-xl font-black uppercase bg-black text-white border-2 border-white hover:bg-white hover:text-black hover:border-black transition-all hard-shadow btn-push">
-                    Show More Chaos 👇
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- WRITING SECTION -->
-    <section id="writing" class="p-4 py-20 md:p-12 bg-white border-b-4 border-black scroll-mt-20">
-        <div class="max-w-7xl mx-auto">
-            <h2 id="writing-header" class="text-5xl md:text-6xl font-black uppercase mb-8 border-l-8 border-black pl-6">
-                The Write Stuff
-            </h2>
-            <p class="mb-8 text-xl max-w-2xl">From scroll-stopping copy to SEO-rich storytelling — here's the good stuff.</p>
-            <div id="writing-filters" class="flex flex-wrap gap-4 mb-12"></div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="writing-grid">
-                <div class="skeleton h-48 border-2 border-black"></div>
-                <div class="skeleton h-48 border-2 border-black"></div>
-                <div class="skeleton h-48 border-2 border-black"></div>
-                <div class="skeleton h-48 border-2 border-black"></div>
-            </div>
-            <div class="text-center mt-12">
-                <button onclick="toggleWriting()" id="writing-toggle-btn" class="px-8 py-4 text-xl font-black uppercase bg-black text-white border-2 border-white hover:bg-white hover:text-black hover:border-black transition-all hard-shadow btn-push">
-                    Show All Writing 👇
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- VIDEO SECTION -->
-    <section id="video" class="bg-black text-white p-4 py-20 md:p-12 border-b-4 border-white scroll-mt-20">
-        <div class="max-w-7xl mx-auto">
-            <h2 id="video-header" class="text-5xl md:text-7xl font-black uppercase text-white mb-6">
-                Video <span class="text-fuchsia-500">Vault</span>
-            </h2>
-            <p class="text-gray-400 text-xl mb-8">From livestreams to storyboards — enjoy my video-centric creations.</p>
-            <div id="video-skills" class="bg-neutral-900 border-2 border-white p-6 mb-12 hard-shadow-lime text-left"></div>
-            <div id="video-filters" class="flex flex-wrap gap-4 mb-12 justify-center md:justify-start"></div>
-            <div id="video-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="skeleton h-64 border-2 border-white"></div>
-                <div class="skeleton h-64 border-2 border-white"></div>
-            </div>
-            <div class="text-center mt-12">
-                <button onclick="toggleVideo()" id="video-toggle-btn" class="px-8 py-4 text-xl font-black uppercase bg-black text-white border-2 border-white hover:bg-white hover:text-black hover:border-black transition-all hard-shadow btn-push">
-                    Show All Videos 👇
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- BUILDER MODE SECTION -->
-    <section id="builder" class="bg-indigo-950 text-white p-4 py-20 md:p-12 border-b-4 border-black scroll-mt-20 relative overflow-hidden">
-        <div class="absolute inset-0 opacity-5 pointer-events-none" style="background-image: radial-gradient(#fff 1px, transparent 1px); background-size: 20px 20px;"></div>
-        <div class="max-w-7xl mx-auto relative z-10">
-            <h2 id="builder-header" class="text-5xl md:text-7xl font-black uppercase text-white mb-6" data-aos="zoom-in">
-                Builder <span class="text-yellow-400">Mode</span>
-            </h2>
-            <p class="text-indigo-300 text-xl mb-8">When I'm not strategizing content, I'm shipping apps. Solo builds from 0 to live.</p>
-
-            <div id="builder-skills" class="bg-indigo-900 border-2 border-indigo-700 p-6 mb-12 hard-shadow-yellow text-left" data-aos="fade-up"></div>
-
-            <div id="builder-filters" class="flex flex-wrap gap-4 mb-12 justify-center md:justify-start"></div>
-
-            <div id="builder-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="skeleton h-64 border-2 border-indigo-700 opacity-30"></div>
-                <div class="skeleton h-64 border-2 border-indigo-700 opacity-30"></div>
-            </div>
-
-            <div class="text-center mt-12">
-                <button onclick="toggleBuilder()" id="builder-toggle-btn" class="hidden px-8 py-4 text-xl font-black uppercase bg-black text-white border-2 border-white hover:bg-white hover:text-black hover:border-black transition-all hard-shadow btn-push">
-                    Show All Projects 👇
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer id="contact" class="bg-lime-300 p-8 pt-20 border-t-2 border-black relative overflow-hidden">
-        <div class="absolute top-4 right-4 z-20">
-            <button onclick="toggleChaos()" class="bg-red-500 text-white border-2 border-black font-black uppercase px-4 py-2 text-xs md:text-sm hover:bg-red-600 transition-colors hard-shadow">
-                ⚠️ DO NOT PRESS
-            </button>
-        </div>
-        <div class="max-w-7xl mx-auto relative z-10 text-center">
-            <h2 class="text-6xl md:text-8xl font-black uppercase mb-8 leading-none">GET IN TOUCH</h2>
-            <p class="text-xl md:text-2xl font-bold bg-white inline-block px-6 py-3 border-2 border-black hard-shadow-fuchsia mb-12 rotate-2">
-                "Responds faster than your ex after seeing your glow-up on Instagram" <br>
-                <span class="text-sm font-normal">– My clients, probably</span>
+  <main>
+    <section class="relative border-b-4 border-black overflow-hidden">
+      <div class="absolute inset-0 bg-grid"></div>
+      <div class="relative max-w-7xl mx-auto px-4 py-12 md:px-8 md:py-20">
+        <div class="inline-block mb-5 bg-lime-300 border-2 border-black px-4 py-2 font-black uppercase text-sm md:text-base hard-shadow">Case Study</div>
+        <div class="grid md:grid-cols-[1.4fr_.9fr] gap-8 md:gap-12 items-start">
+          <div>
+            <p class="text-sm md:text-base font-black uppercase tracking-wide mb-3">San Antonio Zoo · March 2024 – April 2025</p>
+            <h1 class="text-4xl md:text-7xl leading-[0.95] font-black uppercase mb-5">Building a smarter social storytelling engine for a zoo brand with 6M+ followers</h1>
+            <p class="text-lg md:text-2xl font-bold max-w-3xl leading-snug bg-white border-2 border-black p-4 md:p-5 hard-shadow-cyan">
+              As Integrated Marketing Manager, Public Relations and Social , I helped turn a reactive posting rhythm into a more strategic content system that supported awareness, attendance, memberships, PR coverage, and revenue.
             </p>
-            <div class="block mb-16">
-                <a href="mailto:hirebencampbell@gmail.com" class="inline-block px-12 py-6 text-2xl md:text-4xl font-black text-white bg-black border-4 border-black hard-shadow hover:bg-neutral-800 transition-colors btn-push uppercase">
-                    Email Ben
-                </a>
+            <div class="flex flex-wrap gap-3 mt-6">
+              <span class="bg-yellow-200 border-2 border-black px-4 py-2 font-black uppercase text-sm">Social Strategy</span>
+              <span class="bg-fuchsia-200 border-2 border-black px-4 py-2 font-black uppercase text-sm">PR + Storytelling</span>
+              <span class="bg-cyan-200 border-2 border-black px-4 py-2 font-black uppercase text-sm">Content Systems</span>
             </div>
-            <div class="flex flex-col md:flex-row justify-between items-end border-t-4 border-black pt-8">
-                <div class="text-left mb-8 md:mb-0">
-                    <p class="font-bold text-xl uppercase">Ben Campbell Creative © 2026</p>
-                </div>
-                <div class="flex gap-4">
-                    <a href="https://x.com/Ben_Soup" target="_blank" class="w-12 h-12 flex items-center justify-center border-2 border-black bg-white hover:bg-fuchsia-500 hover:text-white transition-colors font-bold text-xl">X</a>
-                    <a href="https://linkedin.com/in/bencampbell8" target="_blank" class="w-12 h-12 flex items-center justify-center border-2 border-black bg-white hover:bg-fuchsia-500 hover:text-white transition-colors font-bold text-xl">Li</a>
-                    <a href="https://instagram.com/bensoup" target="_blank" class="w-12 h-12 flex items-center justify-center border-2 border-black bg-white hover:bg-fuchsia-500 hover:text-white transition-colors font-bold text-xl">Ig</a>
-                    <a href="https://github.com/kylozenzen" target="_blank" class="w-12 h-12 flex items-center justify-center border-2 border-black bg-white hover:bg-fuchsia-500 hover:text-white transition-colors font-bold text-xl">Gh</a>
-                </div>
+          </div>
+
+          <aside class="bg-white border-4 border-black p-4 md:p-5 hard-shadow-fuchsia">
+            <h2 class="text-xl md:text-2xl font-black uppercase mb-4">At a glance</h2>
+            <div class="grid grid-cols-2 gap-3">
+              <div class="bg-fuchsia-200 border-2 border-black p-3 text-center">
+                <div class="text-2xl md:text-3xl font-black">6M+</div>
+                <div class="text-xs font-black uppercase border-t-2 border-black pt-1 mt-1">Followers</div>
+              </div>
+              <div class="bg-lime-200 border-2 border-black p-3 text-center">
+                <div class="text-2xl md:text-3xl font-black">470M+</div>
+                <div class="text-xs font-black uppercase border-t-2 border-black pt-1 mt-1">Impressions</div>
+              </div>
+              <div class="bg-cyan-200 border-2 border-black p-3 text-center">
+                <div class="text-2xl md:text-3xl font-black">15M+</div>
+                <div class="text-xs font-black uppercase border-t-2 border-black pt-1 mt-1">Interactions</div>
+              </div>
+              <div class="bg-yellow-200 border-2 border-black p-3 text-center">
+                <div class="text-2xl md:text-3xl font-black">2M+</div>
+                <div class="text-xs font-black uppercase border-t-2 border-black pt-1 mt-1">TikTok Fans</div>
+              </div>
+              <div class="bg-white border-2 border-black p-3 text-center">
+                <div class="text-2xl md:text-3xl font-black">$75K+</div>
+                <div class="text-xs font-black uppercase border-t-2 border-black pt-1 mt-1">Ad Revenue</div>
+              </div>
+              <div class="bg-white border-2 border-black p-3 text-center">
+                <div class="text-2xl md:text-3xl font-black">12%</div>
+                <div class="text-xs font-black uppercase border-t-2 border-black pt-1 mt-1">Blog Growth</div>
+              </div>
             </div>
+          </aside>
         </div>
-    </footer>
+      </div>
+    </section>
 
-    <!-- BACK TO TOP -->
-    <div id="back-to-top" class="fixed bottom-4 right-4 z-50 transition-opacity opacity-0 pointer-events-none">
-        <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="bg-black text-white w-10 h-10 md:w-12 md:h-12 border-2 border-white hard-shadow hover:bg-fuchsia-500 transition-colors flex items-center justify-center font-bold text-xl">⬆</button>
-    </div>
-    
-    <!-- HIDDEN NOTEPAD -->
-    <div id="notepad" class="fixed top-24 left-1/2 -translate-x-1/2 w-[90%] md:w-[500px] bg-yellow-100 border-4 border-black p-4 z-[100] hard-shadow hidden">
-        <div class="flex justify-between items-center mb-4 border-b-2 border-black pb-2">
-            <h3 class="font-black uppercase text-xl">📝 Secret Ideas</h3>
-            <button onclick="toggleNotepad()" class="font-bold hover:text-red-600">X CLOSE</button>
+    <section class="bg-white border-b-4 border-black px-4 py-10 md:px-8">
+      <div class="max-w-6xl mx-auto">
+        <figure class="story-image hard-shadow-cyan">
+          <img src="assets/zoo-media-giraffe-segment.jpg" alt="News crew filming a giraffe segment at the San Antonio Zoo">
+          <figcaption class="story-caption">
+            <span class="asset-label">Hero / PR support image</span>
+            Suggested asset: <strong>assets/zoo-media-giraffe-segment.jpg</strong> — a strong lead image showing real media support, on-site coordination, and the overlap between storytelling and PR.
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="hazard-stripes border-b-4 border-black py-4 overflow-hidden">
+      <div class="text-center">
+        <span class="text-lg md:text-3xl font-black italic uppercase text-lime-400 tracking-widest bg-black px-2">/// SOCIAL STRATEGY /// PR SUPPORT /// SEASONAL CAMPAIGNS /// CULTURAL RELEVANCE ///</span>
+      </div>
+    </section>
+
+    <section class="bg-white border-b-4 border-black px-4 py-14 md:px-8 md:py-20">
+      <div class="max-w-5xl mx-auto grid md:grid-cols-[0.85fr_1.15fr] gap-8 md:gap-14">
+        <div>
+          <h2 class="text-3xl md:text-5xl font-black uppercase mb-4 border-l-8 border-black pl-4">The challenge</h2>
         </div>
-        <textarea class="w-full h-64 bg-white border-2 border-black p-2 font-mono text-sm resize-none focus:outline-none focus:ring-2 focus:ring-fuchsia-500" placeholder="Type your secret viral ideas here..."></textarea>
-    </div>
-
-    <!-- KONAMI MODAL -->
-    <div id="konami-modal" class="fixed inset-0 z-[100] flex items-center justify-center bg-black bg-opacity-90 hidden">
-        <div class="bg-white border-4 border-lime-400 p-8 max-w-md text-center hard-shadow-fuchsia transform rotate-2">
-            <h2 class="text-4xl font-black uppercase mb-4">🦍 GORILLA MODE ACTIVATED</h2>
-            <p class="text-xl font-bold mb-6">You found the secret code! My wife says "Hi".</p>
-            <button onclick="document.getElementById('konami-modal').classList.add('hidden')" class="bg-black text-white font-bold uppercase px-6 py-3 border-2 border-black hover:bg-lime-400 hover:text-black transition-colors">Close</button>
+        <div class="space-y-5 text-lg leading-relaxed">
+          <p>The zoo had scale, strong audience interest, and no shortage of great stories. The problem was operational: the social workflow had become too reactive. Planning often began at the start of the week with a version of, <span class="font-black">“what are we going to post?”</span></p>
+          <p>That made it harder to diversify storytelling, build momentum around campaigns, and plan far enough ahead to be genuinely strategic. The opportunity was to create a better system without losing the spontaneity that makes social actually work.</p>
         </div>
+      </div>
+    </section>
+
+    <section class="bg-cyan-100 border-b-4 border-black px-4 py-14 md:px-8 md:py-20">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl md:text-5xl font-black uppercase mb-8 border-l-8 border-black pl-4">What I changed</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          <article class="bg-white border-2 border-black p-6 hard-shadow">
+            <h3 class="text-2xl font-black uppercase mb-3">Rebuilt the calendar</h3>
+            <p class="text-lg leading-relaxed">Within my first 60 days, I revamped the social content calendar and built repeatable content buckets that filled roughly <span class="font-black">60% of the week</span>, leaving room for trends, day-of moments, and timely opportunities.</p>
+          </article>
+          <article class="bg-white border-2 border-black p-6 hard-shadow">
+            <h3 class="text-2xl font-black uppercase mb-3">Improved access</h3>
+            <p class="text-lg leading-relaxed">I helped rebuild relationships with animal teams and internal departments so marketing had better access to animals, people, and real story opportunities. Better trust created a better content pipeline.</p>
+          </article>
+          <article class="bg-white border-2 border-black p-6 hard-shadow">
+            <h3 class="text-2xl font-black uppercase mb-3">Made it more strategic</h3>
+            <p class="text-lg leading-relaxed">I pushed for a more balanced mix of animal storytelling, education, seasonal campaigns, event promotion, humor, and real-time trend participation, making the brand feel more varied and more culturally aware.</p>
+          </article>
+        </div>
+
+        <div class="mt-8 bg-black text-white border-4 border-black p-6 md:p-8 hard-shadow-yellow">
+          <p class="text-xl md:text-2xl font-black uppercase mb-2">Operational win</p>
+          <p class="text-lg md:text-xl leading-relaxed">This shift moved the team from reactive weekly planning to getting <span class="text-lime-400 font-black">up to two months ahead</span> on content, which had not happened before.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white border-b-4 border-black px-4 py-10 md:px-8">
+      <div class="max-w-6xl mx-auto grid md:grid-cols-[1.1fr_.9fr] gap-6 items-start">
+        <figure class="story-image hard-shadow">
+          <img src="assets/zoo-giraffe-barn.jpg" alt="Baby giraffe in the barn at the San Antonio Zoo">
+          <figcaption class="story-caption">
+            <span class="asset-label">Supports access + Savanna storytelling</span>
+            Suggested asset: <strong>assets/zoo-giraffe-barn.jpg</strong> — use this here to visually support the work around stronger internal access, better animal storytelling, and Savanna-related content.
+          </figcaption>
+        </figure>
+        <figure class="story-image hard-shadow">
+          <img src="assets/zoo-fundraiser-check.jpg" alt="Fundraising event at the San Antonio Zoo with a large check presentation">
+          <figcaption class="story-caption">
+            <span class="asset-label">Supports fundraising + event storytelling</span>
+            Suggested asset: <strong>assets/zoo-fundraiser-check.jpg</strong> — a strong visual for community storytelling, events, and fundraiser coverage.
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="bg-white border-b-4 border-black px-4 py-14 md:px-8 md:py-20">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl md:text-5xl font-black uppercase mb-8 border-l-8 border-black pl-4">Campaign highlights</h2>
+        <div class="space-y-6">
+          <article class="bg-lime-100 border-2 border-black p-6 hard-shadow">
+            <h3 class="text-2xl md:text-3xl font-black uppercase mb-3">Naylor Savanna</h3>
+            <p class="text-lg leading-relaxed">Goal: build excitement for the zoo’s new giraffe expansion and drive memberships. I created content that supported anticipation, launch momentum, and visit intent. The opening saw <span class="font-black">record attendance</span>, stronger brand mentions across social and PR, and a <span class="font-black">15% increase in pass sign-ups</span>.</p>
+          </article>
+
+          <article class="bg-fuchsia-100 border-2 border-black p-6 hard-shadow">
+            <h3 class="text-2xl md:text-3xl font-black uppercase mb-3">Zoo Boo + Zoo Lights</h3>
+            <p class="text-lg leading-relaxed">Goal: increase visits, memberships, and awareness versus the prior year. I helped refresh the content strategy for both seasonal activations so they felt more campaign-driven, more audience-aware, and less like recycled event filler. Both saw year-over-year increases.</p>
+          </article>
+
+          <article class="bg-cyan-100 border-2 border-black p-6 hard-shadow">
+            <h3 class="text-2xl md:text-3xl font-black uppercase mb-3">National Zookeeper Week</h3>
+            <p class="text-lg leading-relaxed">Goal: tell a stronger human story around animal care and build more trust with the zookeeper team. The campaign helped broaden the content mix while also strengthening the relationship between marketing and the people closest to the work.</p>
+          </article>
+
+          <article class="bg-yellow-100 border-2 border-black p-6 hard-shadow">
+            <h3 class="text-2xl md:text-3xl font-black uppercase mb-3">Cry Me a Cockroach</h3>
+            <p class="text-lg leading-relaxed">Goal: increase fundraiser donations. We created new content and remixed older pieces that had performed well. Results did not grow, largely because the usual national lift was missing in a year when multiple zoos were running similar campaigns. Still, it was a useful lesson in adapting content in a more saturated market.</p>
+          </article>
+
+          <article class="bg-white border-2 border-black p-6 hard-shadow">
+            <h3 class="text-2xl md:text-3xl font-black uppercase mb-3">Congo Falls</h3>
+            <p class="text-lg leading-relaxed">I helped shape early content planning for Congo Falls by learning from partner zoos the gorillas were coming from — identifying what worked, what problems to avoid, and what audiences responded to. It was a smart way to build a better launch foundation before the habitat opened.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white border-b-4 border-black px-4 py-10 md:px-8">
+      <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-6 items-start">
+        <figure class="story-image hard-shadow-fuchsia">
+          <img src="assets/zoo-zoolights-entrance.jpg" alt="Zoo Lights entrance signage at the San Antonio Zoo">
+          <figcaption class="story-caption">
+            <span class="asset-label">Supports seasonal campaign storytelling</span>
+            Suggested asset: <strong>assets/zoo-zoolights-entrance.jpg</strong> — use here to anchor the Zoo Lights / seasonal activations section with a clear atmosphere image.
+          </figcaption>
+        </figure>
+        <figure class="story-image hard-shadow-fuchsia">
+          <img src="assets/zoo-zoolights-bts-camera.jpg" alt="Behind-the-scenes camera shot capturing guests during Zoo Lights">
+          <figcaption class="story-caption">
+            <span class="asset-label">Supports content production / event capture</span>
+            Suggested asset: <strong>assets/zoo-zoolights-bts-camera.jpg</strong> — use this to show behind-the-scenes production during guest-facing seasonal events.
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="bg-black text-white border-b-4 border-white px-4 py-14 md:px-8 md:py-20">
+      <div class="max-w-6xl mx-auto grid md:grid-cols-[1fr_.95fr] gap-8 md:gap-12 items-start">
+        <div>
+          <h2 class="text-3xl md:text-5xl font-black uppercase mb-6">Extending stories beyond social</h2>
+          <p class="text-lg md:text-xl text-gray-200 leading-relaxed mb-5">My role also included supporting PR and media-facing storytelling beyond the zoo’s owned channels. I helped organize and run multiple news visits, including live segments and pre-recorded look lives, and supported media opportunities tied to major zoo events, seasonal activations, and opening moments.</p>
+          <p class="text-lg md:text-xl text-gray-200 leading-relaxed mb-5">For larger stories, we also paired content capture with press release distribution, which helped create stronger story packages for outlets and led to better pickup. That approach made important zoo stories easier to cover and extended the reach of our work beyond the zoo’s own social channels.</p>
+          <p class="text-lg md:text-xl text-gray-200 leading-relaxed">This was one of the clearest examples of how social, PR, and integrated marketing worked best together: better visuals, better packaging, and stronger opportunities for the story to travel.</p>
+        </div>
+        <div class="bg-neutral-900 border-2 border-white p-6 hard-shadow-lime">
+          <h3 class="text-2xl font-black uppercase text-lime-400 mb-4">PR support included</h3>
+          <ul class="space-y-3 text-lg text-gray-200 list-disc pl-5">
+            <li>Organizing news crew visits and on-site segments</li>
+            <li>Supporting live shots and pre-recorded look lives</li>
+            <li>Capturing media-friendly visuals for seasonal events</li>
+            <li>Pairing event content with press releases for better pickup</li>
+            <li>Helping key zoo announcements travel beyond owned channels</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white border-b-4 border-black px-4 py-10 md:px-8">
+      <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-6 items-start">
+        <figure class="story-image hard-shadow-lime">
+          <img src="assets/zoo-media-giraffe-deck.jpg" alt="Second giraffe media setup at the San Antonio Zoo">
+          <figcaption class="story-caption">
+            <span class="asset-label">Supports PR section</span>
+            Suggested asset: <strong>assets/zoo-media-giraffe-deck.jpg</strong> — a good secondary media-support image to reinforce on-site coordination.
+          </figcaption>
+        </figure>
+        <figure class="story-image hard-shadow-lime">
+          <img src="assets/zoo-zoolights-bts-camera-2.jpg" alt="Additional behind-the-scenes camera shot during Zoo Lights">
+          <figcaption class="story-caption">
+            <span class="asset-label">Optional extra asset</span>
+            Suggested asset: <strong>assets/zoo-zoolights-bts-camera-2.jpg</strong> — optional secondary BTS image if you want more depth in the PR / event section.
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="bg-black text-white border-b-4 border-white px-4 py-14 md:px-8 md:py-20">
+      <div class="max-w-6xl mx-auto grid md:grid-cols-[1fr_.95fr] gap-8 md:gap-12 items-start">
+        <div>
+          <h2 class="text-3xl md:text-5xl font-black uppercase mb-6">Reactive content that broke through</h2>
+          <p class="text-lg md:text-xl text-gray-200 leading-relaxed mb-5">One of the biggest social lessons from this role was simple: <span class="text-lime-400 font-black">the more the zoo joined conversations the internet was already having, the more people noticed.</span></p>
+          <p class="text-lg md:text-xl text-gray-200 leading-relaxed mb-5">A standout example paired the Olympic breakdancer with zoo kangaroos because the movement looked hilariously similar. It was timely, native to the conversation, and got picked up everywhere — one of the strongest-performing posts during my tenure.</p>
+          <p class="text-lg md:text-xl text-gray-200 leading-relaxed">That same approach helped content break through around sports, Taylor Swift, food trends, and even the Gulf of America debate, where we jokingly renamed it the <span class="text-fuchsia-400 font-black">Gulf of Tupi</span> after the zoo’s viral baby capybara.</p>
+        </div>
+        <div class="bg-neutral-900 border-2 border-white p-6 hard-shadow-lime">
+          <h3 class="text-2xl font-black uppercase text-lime-400 mb-4">Why it worked</h3>
+          <ul class="space-y-3 text-lg text-gray-200 list-disc pl-5">
+            <li>It felt native to the platform instead of corporate and stiff.</li>
+            <li>It connected the zoo to bigger cultural moments people already cared about.</li>
+            <li>It proved the brand could be timely, funny, and still recognizably itself.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white border-b-4 border-black px-4 py-14 md:px-8 md:py-20">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl md:text-5xl font-black uppercase mb-8 border-l-8 border-black pl-4">Results</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mb-8">
+          <div class="bg-white border-2 border-black p-5 hard-shadow"><p class="text-4xl font-black mb-2">15%</p><p class="font-bold text-lg">Increase in comments and shares through more audience-focused social strategy</p></div>
+          <div class="bg-white border-2 border-black p-5 hard-shadow"><p class="text-4xl font-black mb-2">2 months</p><p class="font-bold text-lg">Ahead on planning after establishing repeatable content buckets</p></div>
+          <div class="bg-white border-2 border-black p-5 hard-shadow"><p class="text-4xl font-black mb-2">National + international</p><p class="font-bold text-lg">Media pickup driven by stronger, more culturally relevant content</p></div>
+        </div>
+        <div class="bg-lime-300 border-4 border-black p-6 md:p-8 hard-shadow-fuchsia">
+          <h3 class="text-2xl md:text-3xl font-black uppercase mb-3">Why this mattered</h3>
+          <p class="text-lg md:text-xl leading-relaxed">This role was bigger than social publishing. I helped improve the system behind the storytelling — planning, collaboration, access, timing, campaign execution, and media support — so content could contribute to awareness, attendance, memberships, fundraising, PR, and revenue with a lot more intention.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-fuchsia-500 text-white px-4 py-14 md:px-8 md:py-20 border-b-4 border-black">
+      <div class="max-w-5xl mx-auto text-center">
+        <p class="text-sm md:text-base font-black uppercase tracking-widest mb-3">Next up</p>
+        <h2 class="text-3xl md:text-6xl font-black uppercase mb-5">More case studies are on the way</h2>
+        <p class="text-lg md:text-2xl font-bold max-w-3xl mx-auto mb-8">Codeup is coming soon. For now, the best next move is to reach out below if you want to talk through my work.</p>
+        <div class="flex justify-center">
+          <span class="px-8 py-4 text-lg font-black uppercase bg-gray-200 text-gray-700 border-2 border-black hard-shadow inline-flex items-center justify-center">Codeup Case Study Coming Soon</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="case-study-contact" class="bg-lime-300 p-8 pt-16 border-t-4 border-black">
+      <div class="max-w-5xl mx-auto text-center">
+        <h2 class="text-4xl md:text-6xl font-black uppercase mb-5 leading-none">Like how I think?</h2>
+        <p class="text-lg md:text-2xl font-bold bg-white inline-block max-w-3xl px-6 py-4 border-2 border-black hard-shadow-fuchsia mb-8 -rotate-1 leading-snug">
+          I build strategy, systems, and creative that help brands show up with more clarity, consistency, and impact.
+        </p>
+
+        <div class="max-w-2xl mx-auto">
+          <form name="portfolio-contact" method="POST" action="../success.html" data-netlify="true" netlify-honeypot="bot-field" class="contact-form bg-white border-4 border-black hard-shadow p-6 md:p-8 text-left">
+            <input type="hidden" name="form-name" value="portfolio-contact" />
+            <p class="hidden">
+              <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+              <div>
+                <label for="name" class="block mb-2 font-black uppercase text-sm">Name</label>
+                <input type="text" id="name" name="name" required class="w-full px-4 py-3 border-2 border-black rounded-none bg-white focus:outline-none focus:ring-0 focus:border-fuchsia-500" placeholder="Your Name" />
+              </div>
+              <div>
+                <label for="email" class="block mb-2 font-black uppercase text-sm">Email</label>
+                <input type="email" id="email" name="email" required class="w-full px-4 py-3 border-2 border-black rounded-none bg-white focus:outline-none focus:ring-0 focus:border-fuchsia-500" placeholder="your@email.com" />
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <label for="message" class="block mb-2 font-black uppercase text-sm">What are you hiring for?</label>
+              <textarea id="message" name="message" rows="5" required class="w-full px-4 py-3 border-2 border-black rounded-none bg-white resize-y focus:outline-none focus:ring-0 focus:border-fuchsia-500" placeholder="Tell me about the role, project, or creative problem you need help solving."></textarea>
+            </div>
+
+            <button type="submit" class="w-full px-6 py-4 text-lg md:text-2xl font-black text-white bg-black border-4 border-black hard-shadow hover:bg-fuchsia-500 transition-colors btn-push uppercase">
+              Reach Out
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-lime-300 p-8 border-t-2 border-black">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="font-black uppercase text-lg">Ben Campbell Creative © 2026</p>
+      <div class="flex gap-3">
+        <a href="https://linkedin.com/in/bencampbell8" target="_blank" class="w-12 h-12 flex items-center justify-center border-2 border-black bg-white hover:bg-fuchsia-500 hover:text-white transition-colors font-bold text-xl">Li</a>
+        <a href="https://instagram.com/bensoup" target="_blank" class="w-12 h-12 flex items-center justify-center border-2 border-black bg-white hover:bg-fuchsia-500 hover:text-white transition-colors font-bold text-xl">Ig</a>
+        <a href="https://github.com/kylozenzen" target="_blank" class="w-12 h-12 flex items-center justify-center border-2 border-black bg-white hover:bg-fuchsia-500 hover:text-white transition-colors font-bold text-xl">Gh</a>
+      </div>
     </div>
-
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script async src="https://www.instagram.com/embed.js"></script>
-    <script>
-        // ==========================================
-        // DATA STORES
-        // ==========================================
-        let socialData = null;
-        let writingData = null;
-        let videoData = null;
-        let builderData = null;
-        let socialExpanded = false;
-        let writingExpanded = false;
-        let videoExpanded = false;
-        let builderExpanded = false;
-
-        // ==========================================
-        // INITIALIZATION
-        // ==========================================
-        document.addEventListener('DOMContentLoaded', async () => {
-            AOS.init({ once: true, duration: 800, offset: 50, easing: 'ease-out-cubic' });
-            await Promise.all([
-                loadSocialContent(),
-                loadWritingContent(),
-                loadVideoContent(),
-                loadBuilderContent()
-            ]);
-        });
-
-        // ==========================================
-        // CONTENT LOADERS
-        // ==========================================
-        async function loadSocialContent() {
-            try {
-                const response = await fetch('social.json');
-                socialData = await response.json();
-                renderSocialContent();
-            } catch (error) {
-                console.error('Error loading social content:', error);
-                document.getElementById('social-grid').innerHTML = '<p class="text-red-600 font-bold">Error loading social content</p>';
-            }
-        }
-
-        async function loadWritingContent() {
-            try {
-                const response = await fetch('writing.json');
-                writingData = await response.json();
-                renderWritingFilters();
-                renderWritingContent();
-            } catch (error) {
-                console.error('Error loading writing content:', error);
-                document.getElementById('writing-grid').innerHTML = '<p class="text-red-600 font-bold">Error loading writing content</p>';
-            }
-        }
-
-        async function loadVideoContent() {
-            try {
-                const response = await fetch('video.json');
-                videoData = await response.json();
-                renderVideoSkills();
-                renderVideoFilters();
-                renderVideoContent();
-            } catch (error) {
-                console.error('Error loading video content:', error);
-                document.getElementById('video-grid').innerHTML = '<p class="text-red-600 font-bold">Error loading video content</p>';
-            }
-        }
-
-        async function loadBuilderContent() {
-            try {
-                const response = await fetch('builders.json');
-                builderData = await response.json();
-                renderBuilderSkills();
-                renderBuilderFilters();
-                renderBuilderContent();
-            } catch (error) {
-                console.error('Error loading builder content:', error);
-                document.getElementById('builder-grid').innerHTML = '<p class="text-red-400 font-bold">Error loading builder content</p>';
-            }
-        }
-
-        // ==========================================
-        // SOCIAL RENDERING
-        // ==========================================
-        function renderSocialContent() {
-            const grid = document.getElementById('social-grid');
-            grid.innerHTML = '';
-            socialData.posts.forEach((post, index) => {
-                const isHidden = !post.featured && !socialExpanded;
-                const card = document.createElement('div');
-                card.className = `bg-white border-2 border-black p-4 hard-shadow flex flex-col h-full ${isHidden ? 'social-hidden hidden' : ''}`;
-                card.setAttribute('data-aos', 'fade-up');
-                if (index > 0) card.setAttribute('data-aos-delay', (index % 2) * 50);
-                card.innerHTML = `
-                    <h3 class="font-black uppercase text-lg mb-4 border-b-2 border-black pb-2">${post.title}</h3>
-                    <div class="flex-grow flex items-center justify-center bg-gray-50 min-h-[450px] border border-gray-200 relative mb-4">
-                        <span class="absolute text-gray-400 font-bold text-center p-4 text-sm z-0">Loading Embed...</span>
-                        <blockquote class="instagram-media relative z-10 w-full" data-instgrm-permalink="${post.permalink}" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:none; margin: 0; padding:0; width:100%;"></blockquote>
-                    </div>
-                    <a href="${post.permalink}" target="_blank" class="block text-center bg-black text-white font-bold py-3 hover:bg-fuchsia-500 transition-colors uppercase text-sm border-2 border-black btn-push">View on Instagram ↗</a>
-                `;
-                grid.appendChild(card);
-            });
-            if (window.instgrm) window.instgrm.Embeds.process();
-        }
-
-        function toggleSocial() {
-            socialExpanded = !socialExpanded;
-            const hiddenPosts = document.querySelectorAll('.social-hidden');
-            const btn = document.getElementById('social-toggle-btn');
-            const header = document.getElementById('social-header');
-            hiddenPosts.forEach(post => post.classList.toggle('hidden'));
-            if (socialExpanded) {
-                btn.innerText = 'Show Less Chaos ☝️';
-                if (window.instgrm) window.instgrm.Embeds.process();
-            } else {
-                btn.innerText = 'Show More Chaos 👇';
-                header.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-        }
-
-        // ==========================================
-        // WRITING RENDERING
-        // ==========================================
-        function renderWritingFilters() {
-            const container = document.getElementById('writing-filters');
-            container.innerHTML = '';
-            writingData.categories.forEach((cat, index) => {
-                const btn = document.createElement('button');
-                btn.className = `filter-btn px-6 py-2 border-2 border-black font-bold uppercase transition-all hover:bg-black hover:text-white ${index === 0 ? 'active' : ''}`;
-                btn.textContent = cat.label;
-                btn.onclick = () => filterWriting(cat.id);
-                container.appendChild(btn);
-            });
-        }
-
-        function renderWritingContent(filterCategory = 'all') {
-            const grid = document.getElementById('writing-grid');
-            grid.innerHTML = '';
-            const categoryColors = { blog: 'bg-lime-300', press: 'bg-cyan-300', careers: 'bg-yellow-300', product: 'bg-fuchsia-300' };
-            writingData.items.forEach(item => {
-                let shouldShow = filterCategory === 'all' ? true : item.category === filterCategory;
-                let isHidden = filterCategory === 'all' && !item.featured && !writingExpanded;
-                if (!shouldShow) return;
-                const card = document.createElement('div');
-                card.className = `writing-item ${item.category} bg-gray-50 border-2 border-black p-6 hard-shadow flex flex-col justify-between ${isHidden ? 'writing-extra hidden' : ''}`;
-                card.setAttribute('data-featured', item.featured);
-                card.innerHTML = `
-                    <div>
-                        <span class="inline-block px-2 py-1 ${categoryColors[item.category] || 'bg-gray-300'} border border-black text-xs font-bold uppercase mb-2">${item.category}</span>
-                        <h3 class="text-2xl font-black uppercase mb-2">${item.title}</h3>
-                        <p class="font-bold text-gray-500 mb-4">${item.client}</p>
-                    </div>
-                    <a href="${item.url}" target="_blank" class="text-fuchsia-600 font-bold hover:underline uppercase">Read More -></a>
-                `;
-                grid.appendChild(card);
-            });
-            const toggleBtn = document.getElementById('writing-toggle-btn');
-            toggleBtn.style.display = filterCategory === 'all' ? 'inline-block' : 'none';
-        }
-
-        function filterWriting(category) {
-            document.querySelectorAll('.filter-btn').forEach(btn => {
-                btn.classList.remove('active');
-                if (btn.textContent.toLowerCase() === category || (category === 'all' && btn.textContent === 'All')) {
-                    btn.classList.add('active');
-                }
-            });
-            writingExpanded = false;
-            document.getElementById('writing-toggle-btn').innerText = 'Show All Writing 👇';
-            renderWritingContent(category);
-        }
-
-        function toggleWriting() {
-            writingExpanded = !writingExpanded;
-            const extras = document.querySelectorAll('.writing-extra');
-            const btn = document.getElementById('writing-toggle-btn');
-            const header = document.getElementById('writing-header');
-            if (writingExpanded) {
-                extras.forEach(item => item.classList.remove('hidden'));
-                btn.innerText = 'Show Less Writing ☝️';
-            } else {
-                extras.forEach(item => item.classList.add('hidden'));
-                btn.innerText = 'Show All Writing 👇';
-                header.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-        }
-
-        // ==========================================
-        // VIDEO RENDERING
-        // ==========================================
-        function renderVideoSkills() {
-            const container = document.getElementById('video-skills');
-            container.innerHTML = `
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div>
-                        <h3 class="text-lime-300 font-black uppercase mb-4 text-xl border-b border-gray-700 pb-2">Production Skills</h3>
-                        <p class="text-gray-300 leading-relaxed font-medium">${videoData.skills.production}</p>
-                    </div>
-                    <div>
-                        <h3 class="text-fuchsia-400 font-black uppercase mb-4 text-xl border-b border-gray-700 pb-2">Software Arsenal</h3>
-                        <p class="text-gray-300 leading-relaxed font-medium">${videoData.skills.software}</p>
-                    </div>
-                </div>
-            `;
-        }
-
-        function renderVideoFilters() {
-            const container = document.getElementById('video-filters');
-            container.innerHTML = '';
-            videoData.categories.forEach((cat, index) => {
-                const btn = document.createElement('button');
-                btn.className = `video-filter-btn px-6 py-2 border-2 border-white bg-black text-white font-bold uppercase transition-all hover:bg-white hover:text-black ${index === 0 ? 'active' : ''}`;
-                btn.textContent = cat.label;
-                btn.onclick = () => filterVideo(cat.id);
-                container.appendChild(btn);
-            });
-        }
-
-        function renderVideoContent(filterCategory = 'all') {
-            const grid = document.getElementById('video-grid');
-            grid.innerHTML = '';
-            const categoryColors = {
-                Codeup: { bg: 'bg-fuchsia-500', text: 'text-white', shadow: 'hard-shadow-fuchsia' },
-                Zoo: { bg: 'bg-lime-500', text: 'text-black', shadow: 'hard-shadow-lime' }
-            };
-            videoData.videos.forEach(video => {
-                let shouldShow = filterCategory === 'all' ? true : video.category === filterCategory;
-                let isHidden = filterCategory === 'all' && !video.featured && !videoExpanded;
-                if (!shouldShow) return;
-                const colors = categoryColors[video.category] || { bg: 'bg-gray-500', text: 'text-white', shadow: 'hard-shadow' };
-                const card = document.createElement('div');
-                card.className = `video-card ${video.category} bg-neutral-900 border-2 border-white p-4 ${colors.shadow} group ${isHidden ? 'video-extra hidden' : ''}`;
-                card.setAttribute('data-featured', video.featured);
-                card.innerHTML = `
-                    <span class="inline-block px-2 py-1 ${colors.bg} ${colors.text} border border-white text-xs font-bold uppercase mb-3">${video.category}</span>
-                    <h3 class="font-bold text-lg mb-4 h-12 line-clamp-2">${video.title}</h3>
-                    <div class="relative w-full aspect-video bg-gray-800 cursor-pointer overflow-hidden border border-white video-thumb" data-id="${video.youtubeId}">
-                        <img src="https://img.youtube.com/vi/${video.youtubeId}/hqdefault.jpg" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity">
-                        <div class="absolute inset-0 flex items-center justify-center play-overlay">
-                            <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center play-icon">
-                                <div class="w-0 h-0 border-t-[8px] border-t-transparent border-l-[16px] border-l-black border-b-[8px] border-b-transparent ml-1"></div>
-                            </div>
-                        </div>
-                    </div>
-                `;
-                grid.appendChild(card);
-            });
-            attachVideoClickHandlers();
-            const toggleBtn = document.getElementById('video-toggle-btn');
-            toggleBtn.style.display = filterCategory === 'all' ? 'inline-block' : 'none';
-        }
-
-        function attachVideoClickHandlers() {
-            document.querySelectorAll('.video-thumb').forEach(thumb => {
-                thumb.addEventListener('click', () => {
-                    const id = thumb.getAttribute('data-id');
-                    const iframe = document.createElement('iframe');
-                    iframe.src = `https://www.youtube.com/embed/${id}?autoplay=1`;
-                    iframe.setAttribute('frameborder', '0');
-                    iframe.setAttribute('allowfullscreen', '');
-                    iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
-                    iframe.className = 'w-full h-full';
-                    thumb.innerHTML = '';
-                    thumb.appendChild(iframe);
-                });
-            });
-        }
-
-        function filterVideo(category) {
-            document.querySelectorAll('.video-filter-btn').forEach(btn => {
-                btn.classList.remove('active');
-                if (btn.textContent === category || (category === 'all' && btn.textContent === 'All')) {
-                    btn.classList.add('active');
-                }
-            });
-            videoExpanded = false;
-            document.getElementById('video-toggle-btn').innerText = 'Show All Videos 👇';
-            renderVideoContent(category);
-        }
-
-        function toggleVideo() {
-            videoExpanded = !videoExpanded;
-            const extras = document.querySelectorAll('.video-extra');
-            const btn = document.getElementById('video-toggle-btn');
-            const header = document.getElementById('video-header');
-            if (videoExpanded) {
-                extras.forEach(item => item.classList.remove('hidden'));
-                btn.innerText = 'Show Less Videos ☝️';
-            } else {
-                extras.forEach(item => item.classList.add('hidden'));
-                btn.innerText = 'Show All Videos 👇';
-                header.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-        }
-
-        // ==========================================
-        // BUILDER RENDERING
-        // ==========================================
-        function renderBuilderSkills() {
-            const container = document.getElementById('builder-skills');
-            container.innerHTML = `
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div>
-                        <h3 class="text-yellow-400 font-black uppercase mb-4 text-xl border-b border-indigo-700 pb-2">Stack</h3>
-                        <p class="text-indigo-200 leading-relaxed font-medium">${builderData.skills.stack}</p>
-                    </div>
-                    <div>
-                        <h3 class="text-fuchsia-400 font-black uppercase mb-4 text-xl border-b border-indigo-700 pb-2">Tools & APIs</h3>
-                        <p class="text-indigo-200 leading-relaxed font-medium">${builderData.skills.tools}</p>
-                    </div>
-                </div>
-            `;
-        }
-
-        function renderBuilderFilters() {
-            const container = document.getElementById('builder-filters');
-            container.innerHTML = '';
-            builderData.categories.forEach((cat, index) => {
-                const btn = document.createElement('button');
-                btn.className = `builder-filter-btn px-6 py-2 border-2 border-white bg-indigo-950 text-white font-bold uppercase transition-all hover:bg-white hover:text-black ${index === 0 ? 'active' : ''}`;
-                btn.textContent = cat.label;
-                btn.onclick = () => filterBuilder(cat.id);
-                container.appendChild(btn);
-            });
-        }
-
-        function renderBuilderContent(filterCategory = 'all') {
-            const grid = document.getElementById('builder-grid');
-            grid.innerHTML = '';
-
-            const accentMap = {
-                amber:   { badge: 'bg-yellow-400 text-yellow-900',  border: 'border-yellow-400', shadow: '4px 4px 0px #facc15' },
-                lime:    { badge: 'bg-lime-400 text-lime-900',       border: 'border-lime-400',   shadow: '4px 4px 0px #bef264' },
-                fuchsia: { badge: 'bg-fuchsia-500 text-white',       border: 'border-fuchsia-500',shadow: '4px 4px 0px #d946ef' },
-                red:     { badge: 'bg-red-500 text-white',           border: 'border-red-500',    shadow: '4px 4px 0px #ef4444' },
-                cyan:    { badge: 'bg-cyan-400 text-cyan-900',       border: 'border-cyan-400',   shadow: '4px 4px 0px #67e8f9' }
-            };
-
-            builderData.projects.forEach((project, index) => {
-                const shouldShow = filterCategory === 'all' ? true : project.category === filterCategory;
-                const isHidden = filterCategory === 'all' && !project.featured && !builderExpanded;
-                if (!shouldShow) return;
-
-                const accent = accentMap[project.accentColor] || accentMap.amber;
-                const isLive = project.url && project.url !== '#';
-
-                const card = document.createElement('div');
-                card.className = `builder-card builder-item ${project.category} bg-indigo-900 border-2 ${accent.border} p-6 flex flex-col justify-between ${isHidden ? 'builder-extra hidden' : ''}`;
-                card.style.boxShadow = accent.shadow;
-                card.setAttribute('data-featured', project.featured);
-                card.setAttribute('data-aos', 'fade-up');
-                card.setAttribute('data-aos-delay', (index % 2) * 50);
-
-                card.innerHTML = `
-                    <div>
-                        <div class="flex items-start justify-between mb-3">
-                            <span class="text-4xl">${project.emoji}</span>
-                            <span class="inline-block px-2 py-1 ${accent.badge} text-xs font-black uppercase">${project.category}</span>
-                        </div>
-                        <h3 class="text-2xl font-black uppercase mb-2 text-white">${project.title}</h3>
-                        <p class="text-indigo-300 font-medium mb-4 text-sm leading-relaxed">${project.tagline}</p>
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            ${project.tags.map(tag => `<span class="px-2 py-1 bg-indigo-800 border border-indigo-600 text-indigo-300 text-xs font-bold uppercase">${tag}</span>`).join('')}
-                        </div>
-                    </div>
-                    <a href="${project.url}" ${isLive ? 'target="_blank"' : ''} class="block text-center font-black uppercase py-3 border-2 transition-colors text-sm ${isLive
-                        ? `${accent.badge} ${accent.border} hover:bg-white hover:text-black hover:border-white`
-                        : 'bg-indigo-800 text-indigo-500 border-indigo-700 cursor-not-allowed pointer-events-none'
-                    }">
-                        ${isLive ? 'View Project ↗' : 'Coming Soon'}
-                    </a>
-                `;
-
-                grid.appendChild(card);
-            });
-
-            const toggleBtn = document.getElementById('builder-toggle-btn');
-            const hasExtras = builderData.projects.some(p => filterCategory === 'all' && !p.featured);
-            toggleBtn.classList.toggle('hidden', !(filterCategory === 'all' && hasExtras));
-        }
-
-        function filterBuilder(category) {
-            document.querySelectorAll('.builder-filter-btn').forEach(btn => {
-                btn.classList.remove('active');
-                if (btn.textContent === category || (category === 'all' && btn.textContent === 'All')) {
-                    btn.classList.add('active');
-                }
-            });
-            builderExpanded = false;
-            document.getElementById('builder-toggle-btn').innerText = 'Show All Projects 👇';
-            renderBuilderContent(category);
-        }
-
-        function toggleBuilder() {
-            builderExpanded = !builderExpanded;
-            const extras = document.querySelectorAll('.builder-extra');
-            const btn = document.getElementById('builder-toggle-btn');
-            const header = document.getElementById('builder-header');
-            if (builderExpanded) {
-                extras.forEach(item => item.classList.remove('hidden'));
-                btn.innerText = 'Show Less Projects ☝️';
-            } else {
-                extras.forEach(item => item.classList.add('hidden'));
-                btn.innerText = 'Show All Projects 👇';
-                header.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-        }
-
-        // ==========================================
-        // UTILITY FUNCTIONS
-        // ==========================================
-        function scrollToSection(id) {
-            const section = document.getElementById(id);
-            if (section) {
-                const y = section.getBoundingClientRect().top + window.pageYOffset - 20;
-                window.scrollTo({ top: y, behavior: 'smooth' });
-            }
-        }
-
-        window.addEventListener('scroll', () => {
-            const btn = document.getElementById('back-to-top');
-            if (window.scrollY > 500) {
-                btn.classList.remove('opacity-0', 'pointer-events-none');
-            } else {
-                btn.classList.add('opacity-0', 'pointer-events-none');
-            }
-        });
-
-        let count = 0;
-        function addJuice() {
-            count++;
-            document.getElementById('juice-count-display').innerText = count;
-        }
-
-        function toggleNotepad() {
-            document.getElementById('notepad').classList.toggle('hidden');
-        }
-
-        function toggleChaos() {
-            document.body.classList.toggle('chaos-active');
-        }
-
-        const konamiCode = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'];
-        let konamiIndex = 0;
-        document.addEventListener('keydown', (e) => {
-            if (e.key === konamiCode[konamiIndex]) {
-                konamiIndex++;
-                if (konamiIndex === konamiCode.length) {
-                    document.getElementById('konami-modal').classList.remove('hidden');
-                    konamiIndex = 0;
-                }
-            } else {
-                konamiIndex = 0;
-            }
-        });
-    </script>
+  </footer>
 
 </body>
 </html>
